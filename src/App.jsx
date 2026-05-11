@@ -35,7 +35,7 @@ function App() {
       </div>
 
       <nav
-        className={`border-b sticky top-0 z-50 backdrop-blur-sm transition-colors duration-300 ${
+        className={`border-b fixed top-0 left-0 w-full z-50 backdrop-blur-sm transition-colors duration-300 ${
           darkMode
             ? "border-[#262626] bg-[#161616]/85"
             : "border-[#d8d8d8] bg-[#e7e7e5]/85"
@@ -190,7 +190,7 @@ function App() {
 
       </nav>
 
-      <section className="relative z-10 max-w-3xl mx-auto px-5 md:px-6 py-24 md:py-28 text-center">
+      <section className="relative z-10 max-w-3xl mx-auto px-5 md:px-6 pt-36 md:pt-40 pb-24 md:pb-28 text-center">
 
         <p
           className={`text-[10px] md:text-[11px] uppercase tracking-[3px] ${
