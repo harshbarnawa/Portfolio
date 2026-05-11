@@ -1,217 +1,210 @@
 function App() {
   return (
-    <div className="min-h-screen bg-white text-black text-sm">
+    <div className="min-h-screen bg-[#ededeb] text-[#2f2f2f] text-sm">
 
-      {/* NAVBAR */}
-      <nav className="border-b border-gray-300">
-        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+      <nav className="border-b border-[#d8d8d8] bg-[#e7e7e5]">
 
-          <h1 className="font-semibold">
-            harshbarnawa
-          </h1>
+        <div className="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
 
-          <div className="flex gap-5 text-gray-700">
-            <a href="#about" className="hover:underline">
+          <img
+            src="/assets/logo.png"
+            alt=""
+            className="w-[210px] object-contain"
+          />
+
+          <div className="flex gap-6 text-[11px] uppercase tracking-[2px] text-[#8a8a8a]">
+
+            <a
+              href="#about"
+              className="hover:text-[#4a4a4a] transition"
+            >
               about
             </a>
 
-            <a href="#projects" className="hover:underline">
+            <a
+              href="#projects"
+              className="hover:text-[#4a4a4a] transition"
+            >
               projects
             </a>
 
-            <a href="#contact" className="hover:underline">
+            <a
+              href="#contact"
+              className="hover:text-[#4a4a4a] transition"
+            >
               contact
             </a>
+
           </div>
 
         </div>
+
       </nav>
 
-      {/* HERO */}
-      <section className="max-w-5xl mx-auto px-6 py-14">
+      <section className="max-w-3xl mx-auto px-6 py-28 text-center">
 
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <p className="text-[11px] uppercase tracking-[3px] text-[#8a8a8a]">
+          software engineer / competitive programmer
+        </p>
 
-          {/* LEFT CONTENT */}
-          <div className="flex-1">
+        <h1 className="text-6xl font-semibold mt-6 tracking-tight leading-none text-[#2f2f2f]">
+          Harsh Barnawa
+        </h1>
 
-            <p className="text-gray-600">
-              software engineer / competitive programmer
-            </p>
+        <p className="mt-10 leading-8 text-[#5f5f5f] max-w-2xl mx-auto">
+          I like building things that feel smooth,
+          solving problems that probably shouldn’t take hours,
+          and turning random ideas into working products.
 
-            <h1 className="text-3xl font-semibold mt-2">
-              Harsh Barnawa
-            </h1>
-
-            <p className="mt-5 leading-7 text-gray-700 max-w-2xl">
-              I build full-stack applications,
-              solve algorithmic problems,
-              and create modern web experiences with a strong focus on performance,
-              simplicity, and clean engineering.
-
-              I mainly work with JavaScript, React, Node.js, C++,
-              and modern frontend technologies while continuously exploring
-              system design, scalable architectures, and AI-powered tools.
-            </p>
-
-          </div>
-
-          {/* PROFILE IMAGE PLACEHOLDER */}
-          <div className="w-40 h-40 border border-gray-300 flex items-center justify-center text-gray-400 text-xs">
-            profile image
-          </div>
-
-        </div>
+          Most of the time I’m either writing JavaScript,
+          debugging something unnecessarily complex,
+          or grinding C++ problems late at night.
+        </p>
 
       </section>
 
-      {/* ABOUT */}
       <section
         id="about"
-        className="border-t border-gray-300"
+        className="border-t border-[#d8d8d8]"
       >
-        <div className="max-w-5xl mx-auto px-6 py-10">
 
-          <h2 className="font-semibold mb-5">
+        <div className="max-w-3xl mx-auto px-6 py-14">
+
+          <h2 className="text-[11px] uppercase tracking-[3px] text-[#8a8a8a] mb-8">
             About
           </h2>
 
-          <p className="leading-8 text-gray-700 max-w-3xl">
-            I enjoy building real-world products,
-            competitive programming,
-            and experimenting with complex frontend systems and interactive UI experiences.
+          <p className="leading-8 text-[#5f5f5f]">
+            I enjoy building products that are clean,
+            minimal, and actually pleasant to use.
 
-            Recently I’ve been working on modern React-based applications,
-            authentication systems,
-            real-time interfaces,
-            and advanced JavaScript projects.
+            Lately I’ve been spending most of my time
+            working with React, building frontend systems,
+            experimenting with UI structure,
+            and solving competitive programming problems in C++.
 
-            I also actively practice DSA and problem solving in C++
-            while improving my understanding of scalable software engineering.
+            I also have a bad habit of rebuilding perfectly working projects
+            just because I think they can look 2% cleaner.
           </p>
 
         </div>
-      </section>
-
-      {/* SKILLS */}
-      <section className="border-t border-gray-300">
-
-        <div className="max-w-5xl mx-auto px-6 py-10">
-
-          <h2 className="font-semibold mb-5">
-            Skills
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3 text-gray-700">
-
-            <p>C++</p>
-            <p>JavaScript</p>
-            <p>React</p>
-            <p>Node.js</p>
-            <p>MongoDB</p>
-            <p>Express</p>
-            <p>TailwindCSS</p>
-            <p>Python</p>
-            <p>Git</p>
-            <p>Frontend Systems</p>
-            <p>Authentication</p>
-            <p>DSA</p>
-
-          </div>
-
-        </div>
 
       </section>
 
-      {/* PROJECTS */}
       <section
         id="projects"
-        className="border-t border-gray-300"
+        className="border-t border-[#d8d8d8]"
       >
 
-        <div className="max-w-5xl mx-auto px-6 py-10">
+        <div className="max-w-3xl mx-auto px-6 py-14">
 
-          <h2 className="font-semibold mb-6">
+          <h2 className="text-[11px] uppercase tracking-[3px] text-[#8a8a8a] mb-10">
             Projects
           </h2>
 
-          <div className="space-y-10">
+          <div className="space-y-14">
 
-            {/* Edito Studio */}
             <div>
 
-              <div className="flex items-center gap-3 flex-wrap">
-                <h3 className="font-medium">
-                  Edito Studio
-                </h3>
+              <div className="flex items-center gap-4">
 
-                <a
-                  href="https://edit-studio-sage.vercel.app/"
-                  target="_blank"
-                  className="text-blue-600 hover:underline text-xs"
-                >
-                  live
-                </a>
-              </div>
-
-              <p className="text-gray-700 mt-2 leading-7 max-w-3xl">
-                Modern frontend-focused creative agency website
-                built using React and modern UI practices.
-                Focused on smooth layouts, responsive design,
-                clean typography, and polished user experience.
-              </p>
-
-            </div>
-
-            {/* Chess Arena */}
-            <div>
-
-              <div className="flex items-center gap-3 flex-wrap">
-                <h3 className="font-medium">
+                <h3 className="font-medium text-base text-[#3a3a3a]">
                   ChessArena
                 </h3>
 
                 <a
                   href="https://chessbylibrary.vercel.app/"
                   target="_blank"
-                  className="text-blue-600 hover:underline text-xs"
+                  rel="noreferrer"
+                  className="text-[11px] text-[#8a8a8a] hover:text-[#3a3a3a] transition"
                 >
-                  live
+                  project link
                 </a>
+
               </div>
 
-              <p className="text-gray-700 mt-2 leading-7 max-w-3xl">
+              <p className="mt-4 text-[#5f5f5f] leading-8">
                 JavaScript-based chess platform featuring
-                authentication systems,
-                game logic,
-                interactive gameplay,
-                and complex frontend state management.
+                authentication systems and complex frontend logic.
               </p>
 
             </div>
 
-            {/* AI Cube Solver */}
             <div>
 
-              <div className="flex items-center gap-3 flex-wrap">
-                <h3 className="font-medium">
+              <div className="flex items-center gap-4">
+
+                <h3 className="font-medium text-base text-[#3a3a3a]">
+                  AlgoBuddy
+                </h3>
+
+                <a
+                  href="https://github.com/harshbarnawa"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[11px] text-[#8a8a8a] hover:text-[#3a3a3a] transition"
+                >
+                  project link
+                </a>
+
+              </div>
+
+              <p className="mt-4 text-[#5f5f5f] leading-8">
+                Interactive DSA learning platform with real-time visualizations
+                for algorithms, trees, graphs, heaps, recursion,
+                and data structures to help students learn concepts visually.
+              </p>
+
+            </div>
+
+            <div>
+
+              <div className="flex items-center gap-4">
+
+                <h3 className="font-medium text-base text-[#3a3a3a]">
+                  Edito Studio
+                </h3>
+
+                <a
+                  href="https://edit-studio-sage.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[11px] text-[#8a8a8a] hover:text-[#3a3a3a] transition"
+                >
+                  project link
+                </a>
+
+              </div>
+
+              <p className="mt-4 text-[#5f5f5f] leading-8">
+                Modern frontend-focused creative agency website
+                built using React and modern UI systems.
+              </p>
+
+            </div>
+
+            <div>
+
+              <div className="flex items-center gap-4">
+
+                <h3 className="font-medium text-base text-[#3a3a3a]">
                   AI Cube Solver
                 </h3>
 
                 <a
                   href="https://github.com/harshbarnawa"
                   target="_blank"
-                  className="text-blue-600 hover:underline text-xs"
+                  rel="noreferrer"
+                  className="text-[11px] text-[#8a8a8a] hover:text-[#3a3a3a] transition"
                 >
-                  github
+                  project link
                 </a>
+
               </div>
 
-              <p className="text-gray-700 mt-2 leading-7 max-w-3xl">
+              <p className="mt-4 text-[#5f5f5f] leading-8">
                 Intelligent Rubik’s Cube solving project
-                focused on algorithmic logic,
-                optimization,
-                and AI-assisted solving techniques.
+                focused on algorithmic optimization systems.
               </p>
 
             </div>
@@ -222,46 +215,89 @@ function App() {
 
       </section>
 
-      {/* CONTACT */}
       <section
         id="contact"
-        className="border-t border-gray-300"
+        className="border-t border-[#d8d8d8]"
       >
 
-        <div className="max-w-5xl mx-auto px-6 py-10">
+        <div className="max-w-3xl mx-auto px-6 py-14">
 
-          <h2 className="font-semibold mb-5">
+          <h2 className="text-[11px] uppercase tracking-[3px] text-[#8a8a8a] mb-8">
             Contact
           </h2>
 
-          <div className="space-y-3 text-gray-700">
+          <div className="mb-10 space-y-3">
 
-            <p>
+            <a
+              href="mailto:harshbarnawa.info@gmail.com"
+              className="block text-[#5f5f5f] hover:text-[#2f2f2f] transition"
+            >
               harshbarnawa.info@gmail.com
-            </p>
+            </a>
+
+            <a
+              href="https://wa.me/916264232915"
+              target="_blank"
+              rel="noreferrer"
+              className="block text-[#5f5f5f] hover:text-[#2f2f2f] transition"
+            >
+              +91 62642 32915
+            </a>
+
+          </div>
+
+          <div className="flex items-center gap-5">
 
             <a
               href="https://github.com/harshbarnawa"
               target="_blank"
-              className="block hover:underline"
+              rel="noreferrer"
+              className="hover:opacity-100 transition duration-300"
             >
-              GitHub
+              <img
+                src="/assets/github.png"
+                alt=""
+                className="w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300"
+              />
             </a>
 
             <a
               href="https://www.linkedin.com/in/harsh-barnawa/"
               target="_blank"
-              className="block hover:underline"
+              rel="noreferrer"
+              className="hover:opacity-100 transition duration-300"
             >
-              LinkedIn
+              <img
+                src="/assets/linkedin.png"
+                alt=""
+                className="w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300"
+              />
+            </a>
+
+            <a
+              href="https://x.com/harshbarnawa"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:opacity-100 transition duration-300"
+            >
+              <img
+                src="/assets/twitter.png"
+                alt=""
+                className="w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300"
+              />
             </a>
 
             <a
               href="https://codeforces.com/profile/harshbarnawa.info"
               target="_blank"
-              className="block hover:underline"
+              rel="noreferrer"
+              className="hover:opacity-100 transition duration-300"
             >
-              Codeforces
+              <img
+                src="/assets/codeforces.png"
+                alt=""
+                className="w-12 h-12 object-contain opacity-60 hover:opacity-100 transition duration-300"
+              />
             </a>
 
           </div>
@@ -269,6 +305,22 @@ function App() {
         </div>
 
       </section>
+
+      <footer className="border-t border-[#d8d8d8] bg-[#e7e7e5]">
+
+        <div className="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between text-[11px] text-[#8a8a8a]">
+
+          <p>
+            © 2026 Harsh Barnawa
+          </p>
+
+          <p>
+            built by Harsh Barnawa
+          </p>
+
+        </div>
+
+      </footer>
 
     </div>
   )
