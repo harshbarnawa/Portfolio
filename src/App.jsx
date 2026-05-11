@@ -299,25 +299,25 @@ function App() {
 
             {[
               {
-                title: "ChessArena",
+                title: "Chess Arena",
                 link: "https://chessbylibrary.vercel.app/",
                 desc: "JavaScript-based chess platform featuring authentication systems and complex frontend logic."
               },
               {
-                title: "AlgoBuddy",
+                title: "Algo Buddy",
                 link: "https://github.com/harshbarnawa",
                 desc: "Interactive DSA learning platform with real-time visualizations for algorithms, trees, graphs, heaps, recursion, and data structures."
+              },{
+                title: "Cube Solver",
+                link: "https://github.com/harshbarnawa",
+                desc: "Intelligent Rubik’s Cube solving project focused on algorithmic optimization systems."
               },
               {
                 title: "Edito Studio",
                 link: "https://edit-studio-sage.vercel.app/",
                 desc: "Modern frontend-focused creative agency website built using React and modern UI systems."
               },
-              {
-                title: "AI Cube Solver",
-                link: "https://github.com/harshbarnawa",
-                desc: "Intelligent Rubik’s Cube solving project focused on algorithmic optimization systems."
-              }
+              
             ].map((project) => (
 
               <div key={project.title}>
