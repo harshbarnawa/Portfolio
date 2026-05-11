@@ -23,8 +23,8 @@ function App() {
         <div
           className={`absolute inset-0 bg-repeat bg-center ${
             darkMode
-              ? "opacity-[0.06]"
-              : "opacity-[0.14]"
+              ? "opacity-[0.04]"
+              : "opacity-[0.1]"
           }`}
           style={{
             backgroundImage: "url('/assets/background.jpg')",
