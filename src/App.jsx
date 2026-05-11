@@ -1,8 +1,25 @@
-function App() {
-  return (
-    <div className="min-h-screen bg-[#ededeb] text-[#2f2f2f] text-sm">
+import { useState } from "react"
 
-      <nav className="border-b border-[#d8d8d8] bg-[#e7e7e5]">
+function App() {
+
+  const [darkMode, setDarkMode] = useState(true)
+
+  return (
+    <div
+      className={`min-h-screen text-sm transition-colors duration-300 ${
+        darkMode
+          ? "bg-[#111111] text-[#e5e5e5]"
+          : "bg-[#ededeb] text-[#2f2f2f]"
+      }`}
+    >
+
+      <nav
+        className={`border-b transition-colors duration-300 ${
+          darkMode
+            ? "border-[#262626] bg-[#161616]"
+            : "border-[#d8d8d8] bg-[#e7e7e5]"
+        }`}
+      >
 
         <div className="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
 
@@ -12,28 +29,57 @@ function App() {
             className="w-[210px] object-contain"
           />
 
-          <div className="flex gap-6 text-[11px] uppercase tracking-[2px] text-[#8a8a8a]">
+          <div
+            className={`flex items-center gap-6 text-[11px] uppercase tracking-[2px] ${
+              darkMode
+                ? "text-[#8a8a8a]"
+                : "text-[#8a8a8a]"
+            }`}
+          >
 
             <a
               href="#about"
-              className="hover:text-[#4a4a4a] transition"
+              className={`transition ${
+                darkMode
+                  ? "hover:text-white"
+                  : "hover:text-[#4a4a4a]"
+              }`}
             >
               about
             </a>
 
             <a
               href="#projects"
-              className="hover:text-[#4a4a4a] transition"
+              className={`transition ${
+                darkMode
+                  ? "hover:text-white"
+                  : "hover:text-[#4a4a4a]"
+              }`}
             >
               projects
             </a>
 
             <a
               href="#contact"
-              className="hover:text-[#4a4a4a] transition"
+              className={`transition ${
+                darkMode
+                  ? "hover:text-white"
+                  : "hover:text-[#4a4a4a]"
+              }`}
             >
               contact
             </a>
+
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className={`transition ${
+                darkMode
+                  ? "text-[#8a8a8a] hover:text-white"
+                  : "text-[#8a8a8a] hover:text-[#2f2f2f]"
+              }`}
+            >
+              {darkMode ? "light" : "dark"}
+            </button>
 
           </div>
 
@@ -43,15 +89,33 @@ function App() {
 
       <section className="max-w-3xl mx-auto px-6 py-28 text-center">
 
-        <p className="text-[11px] uppercase tracking-[3px] text-[#8a8a8a]">
+        <p
+          className={`text-[11px] uppercase tracking-[3px] ${
+            darkMode
+              ? "text-[#7a7a7a]"
+              : "text-[#8a8a8a]"
+          }`}
+        >
           software engineer / competitive programmer
         </p>
 
-        <h1 className="text-6xl font-semibold mt-6 tracking-tight leading-none text-[#2f2f2f]">
+        <h1
+          className={`text-6xl font-semibold mt-6 tracking-tight leading-none ${
+            darkMode
+              ? "text-white"
+              : "text-[#2f2f2f]"
+          }`}
+        >
           Harsh Barnawa
         </h1>
 
-        <p className="mt-10 leading-8 text-[#5f5f5f] max-w-2xl mx-auto">
+        <p
+          className={`mt-10 leading-8 max-w-2xl mx-auto ${
+            darkMode
+              ? "text-[#a1a1a1]"
+              : "text-[#5f5f5f]"
+          }`}
+        >
           I like building things that feel smooth,
           solving problems that probably shouldn’t take hours,
           and turning random ideas into working products.
@@ -65,16 +129,32 @@ function App() {
 
       <section
         id="about"
-        className="border-t border-[#d8d8d8]"
+        className={`border-t ${
+          darkMode
+            ? "border-[#262626]"
+            : "border-[#d8d8d8]"
+        }`}
       >
 
         <div className="max-w-3xl mx-auto px-6 py-14">
 
-          <h2 className="text-[11px] uppercase tracking-[3px] text-[#8a8a8a] mb-8">
+          <h2
+            className={`text-[11px] uppercase tracking-[3px] mb-8 ${
+              darkMode
+                ? "text-[#7a7a7a]"
+                : "text-[#8a8a8a]"
+            }`}
+          >
             About
           </h2>
 
-          <p className="leading-8 text-[#5f5f5f]">
+          <p
+            className={`leading-8 ${
+              darkMode
+                ? "text-[#a1a1a1]"
+                : "text-[#5f5f5f]"
+            }`}
+          >
             I enjoy building products that are clean,
             minimal, and actually pleasant to use.
 
@@ -93,121 +173,92 @@ function App() {
 
       <section
         id="projects"
-        className="border-t border-[#d8d8d8]"
+        className={`border-t ${
+          darkMode
+            ? "border-[#262626]"
+            : "border-[#d8d8d8]"
+        }`}
       >
 
         <div className="max-w-3xl mx-auto px-6 py-14">
 
-          <h2 className="text-[11px] uppercase tracking-[3px] text-[#8a8a8a] mb-10">
+          <h2
+            className={`text-[11px] uppercase tracking-[3px] mb-10 ${
+              darkMode
+                ? "text-[#7a7a7a]"
+                : "text-[#8a8a8a]"
+            }`}
+          >
             Projects
           </h2>
 
           <div className="space-y-14">
 
-            <div>
+            {[
+              {
+                title: "ChessArena",
+                link: "https://chessbylibrary.vercel.app/",
+                desc: "JavaScript-based chess platform featuring authentication systems and complex frontend logic."
+              },
+              {
+                title: "AlgoBuddy",
+                link: "https://github.com/harshbarnawa",
+                desc: "Interactive DSA learning platform with real-time visualizations for algorithms, trees, graphs, heaps, recursion, and data structures."
+              },
+              {
+                title: "Edito Studio",
+                link: "https://edit-studio-sage.vercel.app/",
+                desc: "Modern frontend-focused creative agency website built using React and modern UI systems."
+              },
+              {
+                title: "AI Cube Solver",
+                link: "https://github.com/harshbarnawa",
+                desc: "Intelligent Rubik’s Cube solving project focused on algorithmic optimization systems."
+              }
+            ].map((project) => (
 
-              <div className="flex items-center gap-4">
+              <div key={project.title}>
 
-                <h3 className="font-medium text-base text-[#3a3a3a]">
-                  ChessArena
-                </h3>
+                <div className="flex items-center gap-4">
 
-                <a
-                  href="https://chessbylibrary.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[11px] text-[#8a8a8a] hover:text-[#3a3a3a] transition"
+                  <h3
+                    className={`font-medium text-base ${
+                      darkMode
+                        ? "text-white"
+                        : "text-[#3a3a3a]"
+                    }`}
+                  >
+                    {project.title}
+                  </h3>
+
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`text-[11px] transition ${
+                      darkMode
+                        ? "text-[#7a7a7a] hover:text-white"
+                        : "text-[#8a8a8a] hover:text-[#3a3a3a]"
+                    }`}
+                  >
+                    project link
+                  </a>
+
+                </div>
+
+                <p
+                  className={`mt-4 leading-8 ${
+                    darkMode
+                      ? "text-[#a1a1a1]"
+                      : "text-[#5f5f5f]"
+                  }`}
                 >
-                  project link
-                </a>
+                  {project.desc}
+                </p>
 
               </div>
 
-              <p className="mt-4 text-[#5f5f5f] leading-8">
-                JavaScript-based chess platform featuring
-                authentication systems and complex frontend logic.
-              </p>
-
-            </div>
-
-            <div>
-
-              <div className="flex items-center gap-4">
-
-                <h3 className="font-medium text-base text-[#3a3a3a]">
-                  AlgoBuddy
-                </h3>
-
-                <a
-                  href="https://github.com/harshbarnawa"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[11px] text-[#8a8a8a] hover:text-[#3a3a3a] transition"
-                >
-                  project link
-                </a>
-
-              </div>
-
-              <p className="mt-4 text-[#5f5f5f] leading-8">
-                Interactive DSA learning platform with real-time visualizations
-                for algorithms, trees, graphs, heaps, recursion,
-                and data structures to help students learn concepts visually.
-              </p>
-
-            </div>
-
-            <div>
-
-              <div className="flex items-center gap-4">
-
-                <h3 className="font-medium text-base text-[#3a3a3a]">
-                  Edito Studio
-                </h3>
-
-                <a
-                  href="https://edit-studio-sage.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[11px] text-[#8a8a8a] hover:text-[#3a3a3a] transition"
-                >
-                  project link
-                </a>
-
-              </div>
-
-              <p className="mt-4 text-[#5f5f5f] leading-8">
-                Modern frontend-focused creative agency website
-                built using React and modern UI systems.
-              </p>
-
-            </div>
-
-            <div>
-
-              <div className="flex items-center gap-4">
-
-                <h3 className="font-medium text-base text-[#3a3a3a]">
-                  AI Cube Solver
-                </h3>
-
-                <a
-                  href="https://github.com/harshbarnawa"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[11px] text-[#8a8a8a] hover:text-[#3a3a3a] transition"
-                >
-                  project link
-                </a>
-
-              </div>
-
-              <p className="mt-4 text-[#5f5f5f] leading-8">
-                Intelligent Rubik’s Cube solving project
-                focused on algorithmic optimization systems.
-              </p>
-
-            </div>
+            ))}
 
           </div>
 
@@ -217,12 +268,22 @@ function App() {
 
       <section
         id="contact"
-        className="border-t border-[#d8d8d8]"
+        className={`border-t ${
+          darkMode
+            ? "border-[#262626]"
+            : "border-[#d8d8d8]"
+        }`}
       >
 
         <div className="max-w-3xl mx-auto px-6 py-14">
 
-          <h2 className="text-[11px] uppercase tracking-[3px] text-[#8a8a8a] mb-8">
+          <h2
+            className={`text-[11px] uppercase tracking-[3px] mb-8 ${
+              darkMode
+                ? "text-[#7a7a7a]"
+                : "text-[#8a8a8a]"
+            }`}
+          >
             Contact
           </h2>
 
@@ -230,7 +291,11 @@ function App() {
 
             <a
               href="mailto:harshbarnawa.info@gmail.com"
-              className="block text-[#5f5f5f] hover:text-[#2f2f2f] transition"
+              className={`block transition ${
+                darkMode
+                  ? "text-[#a1a1a1] hover:text-white"
+                  : "text-[#5f5f5f] hover:text-[#2f2f2f]"
+              }`}
             >
               harshbarnawa.info@gmail.com
             </a>
@@ -239,7 +304,11 @@ function App() {
               href="https://wa.me/916264232915"
               target="_blank"
               rel="noreferrer"
-              className="block text-[#5f5f5f] hover:text-[#2f2f2f] transition"
+              className={`block transition ${
+                darkMode
+                  ? "text-[#a1a1a1] hover:text-white"
+                  : "text-[#5f5f5f] hover:text-[#2f2f2f]"
+              }`}
             >
               +91 62642 32915
             </a>
@@ -252,7 +321,6 @@ function App() {
               href="https://github.com/harshbarnawa"
               target="_blank"
               rel="noreferrer"
-              className="hover:opacity-100 transition duration-300"
             >
               <img
                 src="/assets/github.png"
@@ -265,7 +333,6 @@ function App() {
               href="https://www.linkedin.com/in/harsh-barnawa/"
               target="_blank"
               rel="noreferrer"
-              className="hover:opacity-100 transition duration-300"
             >
               <img
                 src="/assets/linkedin.png"
@@ -278,7 +345,6 @@ function App() {
               href="https://x.com/harshbarnawa"
               target="_blank"
               rel="noreferrer"
-              className="hover:opacity-100 transition duration-300"
             >
               <img
                 src="/assets/twitter.png"
@@ -291,7 +357,6 @@ function App() {
               href="https://codeforces.com/profile/harshbarnawa.info"
               target="_blank"
               rel="noreferrer"
-              className="hover:opacity-100 transition duration-300"
             >
               <img
                 src="/assets/codeforces.png"
@@ -306,9 +371,21 @@ function App() {
 
       </section>
 
-      <footer className="border-t border-[#d8d8d8] bg-[#e7e7e5]">
+      <footer
+        className={`border-t transition-colors duration-300 ${
+          darkMode
+            ? "border-[#262626] bg-[#161616]"
+            : "border-[#d8d8d8] bg-[#e7e7e5]"
+        }`}
+      >
 
-        <div className="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between text-[11px] text-[#8a8a8a]">
+        <div
+          className={`max-w-3xl mx-auto px-6 py-5 flex items-center justify-between text-[11px] ${
+            darkMode
+              ? "text-[#7a7a7a]"
+              : "text-[#8a8a8a]"
+          }`}
+        >
 
           <p>
             © 2026 Harsh Barnawa
