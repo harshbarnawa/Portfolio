@@ -511,7 +511,7 @@ function App() {
           </p>
 
           <p>
-            built by Harsh Barnawa
+            Built by Harsh Barnawa
           </p>
 
         </div>
