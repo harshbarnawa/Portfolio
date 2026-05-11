@@ -3,94 +3,197 @@ import { useState } from "react"
 function App() {
 
   const [darkMode, setDarkMode] = useState(true)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <div
-      className={`min-h-screen text-sm transition-colors duration-300 ${
+      className={`min-h-screen text-sm transition-colors duration-300 relative overflow-x-hidden ${
         darkMode
           ? "bg-[#111111] text-[#e5e5e5]"
           : "bg-[#ededeb] text-[#2f2f2f]"
       }`}
     >
 
-      <nav
-        className={`border-b transition-colors duration-300 ${
-          darkMode
-            ? "border-[#262626] bg-[#161616]"
-            : "border-[#d8d8d8] bg-[#e7e7e5]"
+      <div
+        className={`fixed inset-0 pointer-events-none z-0 ${
+          darkMode ? "invert" : ""
         }`}
       >
 
-        <div className="max-w-3xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div
+          className={`absolute inset-0 bg-repeat bg-center ${
+            darkMode
+              ? "opacity-[0.06]"
+              : "opacity-[0.14]"
+          }`}
+          style={{
+            backgroundImage: "url('/assets/background.jpg')",
+            backgroundSize: "1000px",
+          }}
+        />
+
+      </div>
+
+      <nav
+        className={`border-b sticky top-0 z-50 backdrop-blur-sm transition-colors duration-300 ${
+          darkMode
+            ? "border-[#262626] bg-[#161616]/85"
+            : "border-[#d8d8d8] bg-[#e7e7e5]/85"
+        }`}
+      >
+
+        <div className="relative z-20 max-w-3xl mx-auto px-5 md:px-6 py-5 flex items-center justify-between">
 
           <img
             src="/assets/logo.png"
             alt=""
-            className="w-[210px] object-contain"
+            className="w-[145px] md:w-[210px] object-contain"
           />
 
-          <div
-            className={`flex items-center gap-6 text-[11px] uppercase tracking-[2px] ${
-              darkMode
-                ? "text-[#8a8a8a]"
-                : "text-[#8a8a8a]"
-            }`}
-          >
+          <div className="hidden md:flex items-center gap-8">
 
-            <a
-              href="#about"
-              className={`transition ${
-                darkMode
-                  ? "hover:text-white"
-                  : "hover:text-[#4a4a4a]"
-              }`}
-            >
-              about
-            </a>
+            <div className="flex gap-6 text-[11px] uppercase tracking-[2px] text-[#8a8a8a]">
 
-            <a
-              href="#projects"
-              className={`transition ${
-                darkMode
-                  ? "hover:text-white"
-                  : "hover:text-[#4a4a4a]"
-              }`}
-            >
-              projects
-            </a>
+              <a
+                href="#about"
+                className={`transition ${
+                  darkMode
+                    ? "hover:text-white"
+                    : "hover:text-[#4a4a4a]"
+                }`}
+              >
+                about
+              </a>
 
-            <a
-              href="#contact"
-              className={`transition ${
-                darkMode
-                  ? "hover:text-white"
-                  : "hover:text-[#4a4a4a]"
-              }`}
-            >
-              contact
-            </a>
+              <a
+                href="#projects"
+                className={`transition ${
+                  darkMode
+                    ? "hover:text-white"
+                    : "hover:text-[#4a4a4a]"
+                }`}
+              >
+                projects
+              </a>
+
+              <a
+                href="#contact"
+                className={`transition ${
+                  darkMode
+                    ? "hover:text-white"
+                    : "hover:text-[#4a4a4a]"
+                }`}
+              >
+                contact
+              </a>
+
+            </div>
 
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className={`transition ${
+              className={`w-14 h-7 rounded-full flex items-center px-1 transition duration-300 ${
                 darkMode
-                  ? "text-[#8a8a8a] hover:text-white"
-                  : "text-[#8a8a8a] hover:text-[#2f2f2f]"
+                  ? "bg-[#2a2a2a] justify-end"
+                  : "bg-[#d0d0d0] justify-start"
               }`}
             >
-              {darkMode ? "light" : "dark"}
+
+              <div
+                className={`w-5 h-5 rounded-full flex items-center justify-center transition duration-300 ${
+                  darkMode
+                    ? "bg-white"
+                    : "bg-[#2f2f2f]"
+                }`}
+              >
+
+                <img
+                  src={darkMode ? "/assets/moon.png" : "/assets/sun.png"}
+                  alt=""
+                  className={`w-3 h-3 object-contain ${
+                    darkMode
+                      ? ""
+                      : "invert"
+                  }`}
+                />
+
+              </div>
+
+            </button>
+
+          </div>
+
+          <div className="md:hidden flex items-center gap-4">
+
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className={`w-12 h-6 rounded-full flex items-center px-1 transition duration-300 ${
+                darkMode
+                  ? "bg-[#2a2a2a] justify-end"
+                  : "bg-[#d0d0d0] justify-start"
+              }`}
+            >
+
+              <div
+                className={`w-4 h-4 rounded-full flex items-center justify-center transition duration-300 ${
+                  darkMode
+                    ? "bg-white"
+                    : "bg-[#2f2f2f]"
+                }`}
+              >
+
+                <img
+                  src={darkMode ? "/assets/moon.png" : "/assets/sun.png"}
+                  alt=""
+                  className={`w-2 h-2 object-contain ${
+                    darkMode
+                      ? ""
+                      : "invert"
+                  }`}
+                />
+
+              </div>
+
+            </button>
+
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex flex-col gap-[4px]"
+            >
+
+              <div className={`w-5 h-[1.5px] ${darkMode ? "bg-white" : "bg-black"}`} />
+              <div className={`w-5 h-[1.5px] ${darkMode ? "bg-white" : "bg-black"}`} />
+              <div className={`w-5 h-[1.5px] ${darkMode ? "bg-white" : "bg-black"}`} />
+
             </button>
 
           </div>
 
         </div>
 
+        {menuOpen && (
+
+          <div
+            className={`md:hidden border-t px-5 py-5 flex flex-col gap-5 text-[11px] uppercase tracking-[2px] relative z-20 ${
+              darkMode
+                ? "border-[#262626] bg-[#161616]/95 text-[#8a8a8a]"
+                : "border-[#d8d8d8] bg-[#e7e7e5]/95 text-[#8a8a8a]"
+            }`}
+          >
+
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="#contact">contact</a>
+
+          </div>
+
+        )}
+
       </nav>
 
-      <section className="max-w-3xl mx-auto px-6 py-28 text-center">
+      <section className="relative z-10 max-w-3xl mx-auto px-5 md:px-6 py-24 md:py-28 text-center">
 
         <p
-          className={`text-[11px] uppercase tracking-[3px] ${
+          className={`text-[10px] md:text-[11px] uppercase tracking-[3px] ${
             darkMode
               ? "text-[#7a7a7a]"
               : "text-[#8a8a8a]"
@@ -100,7 +203,7 @@ function App() {
         </p>
 
         <h1
-          className={`text-6xl font-semibold mt-6 tracking-tight leading-none ${
+          className={`text-4xl md:text-6xl font-semibold mt-6 tracking-tight leading-none ${
             darkMode
               ? "text-white"
               : "text-[#2f2f2f]"
@@ -110,7 +213,7 @@ function App() {
         </h1>
 
         <p
-          className={`mt-10 leading-8 max-w-2xl mx-auto ${
+          className={`mt-8 md:mt-10 leading-8 max-w-2xl mx-auto text-[14px] md:text-sm ${
             darkMode
               ? "text-[#a1a1a1]"
               : "text-[#5f5f5f]"
@@ -129,14 +232,14 @@ function App() {
 
       <section
         id="about"
-        className={`border-t ${
+        className={`relative z-10 border-t ${
           darkMode
             ? "border-[#262626]"
             : "border-[#d8d8d8]"
         }`}
       >
 
-        <div className="max-w-3xl mx-auto px-6 py-14">
+        <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
 
           <h2
             className={`text-[11px] uppercase tracking-[3px] mb-8 ${
@@ -173,14 +276,14 @@ function App() {
 
       <section
         id="projects"
-        className={`border-t ${
+        className={`relative z-10 border-t ${
           darkMode
             ? "border-[#262626]"
             : "border-[#d8d8d8]"
         }`}
       >
 
-        <div className="max-w-3xl mx-auto px-6 py-14">
+        <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
 
           <h2
             className={`text-[11px] uppercase tracking-[3px] mb-10 ${
@@ -219,7 +322,7 @@ function App() {
 
               <div key={project.title}>
 
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
 
                   <h3
                     className={`font-medium text-base ${
@@ -268,14 +371,14 @@ function App() {
 
       <section
         id="contact"
-        className={`border-t ${
+        className={`relative z-10 border-t ${
           darkMode
             ? "border-[#262626]"
             : "border-[#d8d8d8]"
         }`}
       >
 
-        <div className="max-w-3xl mx-auto px-6 py-14">
+        <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
 
           <h2
             className={`text-[11px] uppercase tracking-[3px] mb-8 ${
@@ -291,7 +394,7 @@ function App() {
 
             <a
               href="mailto:harshbarnawa.info@gmail.com"
-              className={`block transition ${
+              className={`block transition break-all ${
                 darkMode
                   ? "text-[#a1a1a1] hover:text-white"
                   : "text-[#5f5f5f] hover:text-[#2f2f2f]"
@@ -315,7 +418,7 @@ function App() {
 
           </div>
 
-          <div className="flex items-center gap-5">
+          <div className="flex items-center flex-wrap gap-5">
 
             <a
               href="https://github.com/harshbarnawa"
@@ -325,7 +428,11 @@ function App() {
               <img
                 src="/assets/github.png"
                 alt=""
-                className="w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300"
+                className={`w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300 ${
+                  darkMode
+                    ? "invert hover:invert-0"
+                    : ""
+                }`}
               />
             </a>
 
@@ -337,7 +444,11 @@ function App() {
               <img
                 src="/assets/linkedin.png"
                 alt=""
-                className="w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300"
+                className={`w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300 ${
+                  darkMode
+                    ? "invert hover:invert-0"
+                    : ""
+                }`}
               />
             </a>
 
@@ -349,7 +460,11 @@ function App() {
               <img
                 src="/assets/twitter.png"
                 alt=""
-                className="w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300"
+                className={`w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300 ${
+                  darkMode
+                    ? "invert hover:invert-0"
+                    : ""
+                }`}
               />
             </a>
 
@@ -361,7 +476,11 @@ function App() {
               <img
                 src="/assets/codeforces.png"
                 alt=""
-                className="w-12 h-12 object-contain opacity-60 hover:opacity-100 transition duration-300"
+                className={`w-12 h-12 object-contain opacity-60 hover:opacity-100 transition duration-300 ${
+                  darkMode
+                    ? "invert hover:invert-0"
+                    : ""
+                }`}
               />
             </a>
 
@@ -372,15 +491,15 @@ function App() {
       </section>
 
       <footer
-        className={`border-t transition-colors duration-300 ${
+        className={`relative z-10 border-t transition-colors duration-300 ${
           darkMode
-            ? "border-[#262626] bg-[#161616]"
-            : "border-[#d8d8d8] bg-[#e7e7e5]"
+            ? "border-[#262626] bg-[#161616]/80"
+            : "border-[#d8d8d8] bg-[#e7e7e5]/80"
         }`}
       >
 
         <div
-          className={`max-w-3xl mx-auto px-6 py-5 flex items-center justify-between text-[11px] ${
+          className={`max-w-3xl mx-auto px-5 md:px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-2 text-[11px] ${
             darkMode
               ? "text-[#7a7a7a]"
               : "text-[#8a8a8a]"
