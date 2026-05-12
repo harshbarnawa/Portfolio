@@ -47,12 +47,12 @@ function App() {
           <img
             src="/assets/logo.png"
             alt=""
-            className="w-[145px] md:w-[210px] object-contain"
+            className="w-[100px] md:w-[140px] object-contain"
           />
 
           <div className="hidden md:flex items-center gap-8">
 
-            <div className="flex gap-6 text-[11px] uppercase tracking-[2px] text-[#8a8a8a]">
+            <div className="flex items-center gap-6 text-[11px] uppercase tracking-[2px] text-[#8a8a8a]">
 
               <a
                 href="#about"
@@ -77,6 +77,17 @@ function App() {
               </a>
 
               <a
+                href="#blogs"
+                className={`transition ${
+                  darkMode
+                    ? "hover:text-white"
+                    : "hover:text-[#4a4a4a]"
+                }`}
+              >
+                blogs
+              </a>
+
+              <a
                 href="#contact"
                 className={`transition ${
                   darkMode
@@ -86,6 +97,16 @@ function App() {
               >
                 contact
               </a>
+
+              <div
+                className={`hidden lg:flex items-center rounded-full px-4 py-2 text-[10px] normal-case border transition ${
+                  darkMode
+                    ? "border-[#2f2f2f] bg-[#1a1a1a] text-[#6f6f6f]"
+                    : "border-[#d3d3d3] bg-[#efefef] text-[#8a8a8a]"
+                }`}
+              >
+                search blog here...
+              </div>
 
             </div>
 
@@ -182,6 +203,7 @@ function App() {
 
             <a href="#about">about</a>
             <a href="#projects">projects</a>
+            <a href="#blogs">blogs</a>
             <a href="#contact">contact</a>
 
           </div>
@@ -190,89 +212,111 @@ function App() {
 
       </nav>
 
-      <section className="relative z-10 max-w-3xl mx-auto px-5 md:px-6 pt-36 md:pt-40 pb-24 md:pb-28 text-center">
+   <section className="relative z-10 max-w-3xl mx-auto px-5 md:px-6 pt-40 md:pt-52 pb-24 md:pb-28">
 
-        <p
-          className={`text-[10px] md:text-[11px] uppercase tracking-[3px] ${
-            darkMode
-              ? "text-[#7a7a7a]"
-              : "text-[#8a8a8a]"
-          }`}
-        >
-          software engineer / competitive programmer
-        </p>
+  <div
+    className={`border rounded-[28px] p-8 md:p-10 transition ${
+      darkMode
+        ? "border-[#262626] bg-[#151515]/70"
+        : "border-[#d8d8d8] bg-[#efefef]/70"
+    }`}
+  >
 
-        <h1
-          className={`text-4xl md:text-6xl font-semibold mt-6 tracking-tight leading-none ${
-            darkMode
-              ? "text-white"
-              : "text-[#2f2f2f]"
-          }`}
-        >
-          Harsh Barnawa
-        </h1>
+    <div className="flex items-center justify-between mb-10">
 
-        <p
-          className={`mt-8 md:mt-10 leading-8 max-w-2xl mx-auto text-[14px] md:text-sm ${
-            darkMode
-              ? "text-[#a1a1a1]"
-              : "text-[#5f5f5f]"
-          }`}
-        >
-          I like building things that feel smooth,
-          solving problems that probably shouldn’t take hours,
-          and turning random ideas into working products.
-
-          Most of the time I’m either writing JavaScript,
-          debugging something unnecessarily complex,
-          or grinding C++ problems late at night.
-        </p>
-
-      </section>
-
-      <section
-        id="about"
-        className={`relative z-10 border-t ${
+      <p
+        className={`text-[11px] uppercase tracking-[3px] ${
           darkMode
-            ? "border-[#262626]"
-            : "border-[#d8d8d8]"
+            ? "text-[#727272]"
+            : "text-[#8a8a8a]"
+        }`}
+      >
+        harsh barnawa
+      </p>
+
+      <div
+        className={`w-2 h-2 rounded-full ${
+          darkMode
+            ? "bg-[#d4d4d4]"
+            : "bg-[#3a3a3a]"
+        }`}
+      />
+
+    </div>
+
+    <p
+      className={`text-[15px] md:text-[17px] leading-[2] tracking-[-0.01em] ${
+        darkMode
+          ? "text-[#cfcfcf]"
+          : "text-[#4a4a4a]"
+      }`}
+    >
+      I like building clean things and overthinking small details that probably don't matter that much. mostly building random projects, solving cpp problems and rebuilding things again because “something still feels off”</p>
+
+  </div>
+
+</section>
+<section
+  id="about"
+  className={`relative z-10 border-t ${
+    darkMode
+      ? "border-[#262626]"
+      : "border-[#d8d8d8]"
+  }`}
+>
+
+  <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
+
+    <h2
+      className={`text-[11px] uppercase tracking-[3px] mb-8 ${
+        darkMode
+          ? "text-[#7a7a7a]"
+          : "text-[#8a8a8a]"
+      }`}
+    >
+      About
+    </h2>
+
+    <div className="space-y-10">
+
+      <p
+        className={`leading-8 ${
+          darkMode
+            ? "text-[#a1a1a1]"
+            : "text-[#5f5f5f]"
         }`}
       >
 
-        <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
+       currently studying engineering, building random ideas into actual products and spending way too much time solving problems that could’ve probably been avoided with better planning. i enjoy coding, competitive programming, system design, late night debugging sessions and pushing random commits to github at 3am pretending everything is under control.
+      </p>
 
-          <h2
-            className={`text-[11px] uppercase tracking-[3px] mb-8 ${
-              darkMode
-                ? "text-[#7a7a7a]"
-                : "text-[#8a8a8a]"
-            }`}
-          >
-            About
-          </h2>
+      <div
+  className={`border rounded-[24px] p-5 overflow-hidden ${
+    darkMode
+      ? "border-[#262626] bg-[#151515]/70"
+      : "border-[#d8d8d8] bg-[#efefef]/70"
+  }`}
+>
 
-          <p
-            className={`leading-8 ${
-              darkMode
-                ? "text-[#a1a1a1]"
-                : "text-[#5f5f5f]"
-            }`}
-          >
-            I enjoy building products that are clean,
-            minimal, and actually pleasant to use.
+  <img
+    src={`https://ghchart.rshah.org/${
+      darkMode ? "4a4a4a" : "2f2f2f"
+    }/harshbarnawa`}
+    alt=""
+    className={`w-full ${
+      darkMode
+        ? "opacity-80"
+        : "opacity-80"
+    }`}
+  />
 
-            Lately I’ve been spending most of my time
-            working with React, building frontend systems,
-            experimenting with UI structure,
-            and solving competitive programming problems in C++.
+</div>
 
-            I also have a bad habit of rebuilding perfectly working projects
-            just because I think they can look 2% cleaner.
-          </p>
+    </div>
 
-        </div>
+  </div>
 
-      </section>
+</section>
 
       <section
         id="projects"
@@ -307,7 +351,8 @@ function App() {
                 title: "Algo Buddy",
                 link: "https://github.com/harshbarnawa",
                 desc: "Interactive DSA learning platform with real-time visualizations for algorithms, trees, graphs, heaps, recursion, and data structures."
-              },{
+              },
+              {
                 title: "Cube Solver",
                 link: "https://github.com/harshbarnawa",
                 desc: "Intelligent Rubik’s Cube solving project focused on algorithmic optimization systems."
@@ -317,7 +362,7 @@ function App() {
                 link: "https://edit-studio-sage.vercel.app/",
                 desc: "Modern frontend-focused creative agency website built using React and modern UI systems."
               },
-              
+
             ].map((project) => (
 
               <div key={project.title}>
@@ -368,6 +413,162 @@ function App() {
         </div>
 
       </section>
+
+      <section
+        id="blogs"
+        className={`relative z-10 border-t ${
+          darkMode
+            ? "border-[#262626]"
+            : "border-[#d8d8d8]"
+        }`}
+      >
+
+        <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
+
+          <h2
+            className={`text-[11px] uppercase tracking-[3px] mb-10 ${
+              darkMode
+                ? "text-[#7a7a7a]"
+                : "text-[#8a8a8a]"
+            }`}
+          >
+            Blogs
+          </h2>
+
+          <div className="space-y-10">
+
+            {[
+              {
+                title: "Rebuilding This Portfolio Again",
+                desc: "Turns out more animations don't make the work look smarterr..after rebuilding this way too many times I realized simple layouts age better than aggressive UI animations...",
+                date: "May 2026"
+              },
+              {
+                title: "How I Connect People",
+                desc: "I usually start being myself and share my thoughts to other to make network, Like it's easy to connect people by doing whatever you do and show whatever you are...",
+                date: "May 2026"
+              }
+            ].map((blog) => (
+
+              <div
+                key={blog.title}
+                className={`border rounded-2xl p-6 transition ${
+                  darkMode
+                    ? "border-[#262626] hover:bg-[#171717]"
+                    : "border-[#d8d8d8] hover:bg-[#e8e8e8]"
+                }`}
+              >
+
+                <div className="flex items-center justify-between gap-4 mb-4">
+
+                  <h3
+                    className={`text-base font-medium ${
+                      darkMode
+                        ? "text-white"
+                        : "text-[#2f2f2f]"
+                    }`}
+                  >
+                    {blog.title}
+                  </h3>
+
+                  <p
+                    className={`text-[10px] uppercase tracking-[2px] ${
+                      darkMode
+                        ? "text-[#6f6f6f]"
+                        : "text-[#9a9a9a]"
+                    }`}
+                  >
+                    {blog.date}
+                  </p>
+
+                </div>
+
+                <p
+                  className={`leading-7 text-[14px] ${
+                    darkMode
+                      ? "text-[#a1a1a1]"
+                      : "text-[#5f5f5f]"
+                  }`}
+                >
+                  {blog.desc}
+                </p>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+<section
+  id="skills"
+  className={`relative z-10 border-t ${
+    darkMode
+      ? "border-[#262626]"
+      : "border-[#d8d8d8]"
+  }`}
+>
+
+  <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
+
+    <h2
+      className={`text-[11px] uppercase tracking-[3px] mb-10 ${
+        darkMode
+          ? "text-[#7a7a7a]"
+          : "text-[#8a8a8a]"
+      }`}
+    >
+      Skills & Technologies
+    </h2>
+
+    <div className="flex flex-wrap gap-3">
+
+      {[
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Tailwind",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "C/C++",
+        "SQL",
+        "Git",
+        "Docker",
+        "PostgresSQL",
+        "Prisma",
+        "Linux",
+        "Go",
+        "Postman",
+        "Cloudflare"
+      ].map((skill) => (
+
+        <div
+          key={skill}
+          className={`border rounded-full px-4 py-2 text-[13px] transition duration-300 cursor-default ${
+            darkMode
+              ? "border-[#2b2b2b] bg-[#171717]/70 text-[#cfcfcf] hover:bg-[#1e1e1e]"
+              : "border-[#d4d4d4] bg-[#f2f2f2]/70 text-[#4a4a4a] hover:bg-[#ebebeb]"
+          }`}
+        >
+          {skill}
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+
 
       <section
         id="contact"
