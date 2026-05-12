@@ -1,3 +1,4 @@
+
 import { useState } from "react"
 
 function App() {
@@ -14,25 +15,26 @@ function App() {
       }`}
     >
 
-      <div
-        className={`fixed inset-0 pointer-events-none z-0 ${
-          darkMode ? "invert" : ""
-        }`}
-      >
+     <div
+  className={`absolute top-0 left-0 w-full h-full pointer-events-none z-0 ${
+    darkMode ? "invert" : ""
+  }`}
+>
 
-        <div
-          className={`absolute inset-0 bg-repeat bg-center ${
-            darkMode
-              ? "opacity-[0.04]"
-              : "opacity-[0.1]"
-          }`}
-          style={{
-            backgroundImage: "url('/assets/background.jpg')",
-            backgroundSize: "1000px",
-          }}
-        />
+ <div
+  className={`absolute top-0 left-0 w-full h-full bg-repeat ${
+    darkMode
+      ? "opacity-[0.03]"
+      : "opacity-[0.08]"
+  }`}
+  style={{
+    backgroundImage: "url('/assets/background.jpg')",
+    backgroundSize: "300px",
+    backgroundPosition: "center top",
+  }}
+/>
 
-      </div>
+</div>
 
       <nav
         className={`border-b fixed top-0 left-0 w-full z-50 backdrop-blur-sm transition-colors duration-300 ${
