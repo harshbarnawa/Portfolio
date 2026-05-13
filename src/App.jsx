@@ -297,44 +297,8 @@ function App() {
       I like building clean things and overthinking small details that probably don't matter that much. mostly building random projects, solving cpp problems and rebuilding things again because “something still feels off”</p>
 
   </div>
-
-</section>
-<section
-  id="about"
-  className={`relative z-10 border-t ${
-    darkMode
-      ? "border-[#262626]"
-      : "border-[#d8d8d8]"
-  }`}
->
-
-  <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
-
-    <h2
-      className={`text-[11px] uppercase tracking-[3px] mb-8 ${
-        darkMode
-          ? "text-[#7a7a7a]"
-          : "text-[#8a8a8a]"
-      }`}
-    >
-      About
-    </h2>
-
-    <div className="space-y-10">
-
-      <p
-        className={`leading-8 ${
-          darkMode
-            ? "text-[#a1a1a1]"
-            : "text-[#5f5f5f]"
-        }`}
-      >
-
-       currently studying engineering, building random ideas into actual products and spending way too much time solving problems that could’ve probably been avoided with better planning. i enjoy coding, competitive programming, system design, late night debugging sessions and pushing random commits to github at 3am pretending everything is under control.
-      </p>
-
-      <div
-  className={`border rounded-[24px] p-5 overflow-hidden ${
+  <div
+  className={`mt-10 border rounded-[24px] p-5 overflow-hidden ${
     darkMode
       ? "border-[#262626] bg-[#151515]/70"
       : "border-[#d8d8d8] bg-[#efefef]/70"
@@ -345,21 +309,14 @@ function App() {
     src={`https://ghchart.rshah.org/${
       darkMode ? "4a4a4a" : "2f2f2f"
     }/harshbarnawa`}
-    alt=""
-    className={`w-full ${
-      darkMode
-        ? "opacity-80"
-        : "opacity-80"
-    }`}
+    alt="GitHub Contribution Graph"
+    className="w-full opacity-80"
   />
 
 </div>
 
-    </div>
-
-  </div>
-
 </section>
+
 
       <section
         id="projects"
