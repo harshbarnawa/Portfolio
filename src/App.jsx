@@ -67,7 +67,16 @@ function App() {
                 projects
               </a>
 
-
+<a
+                href="#skills"
+                className={`transition ${
+                  darkMode
+                    ? "hover:text-white"
+                    : "hover:text-[#4a4a4a]"
+                }`}
+              >
+                skills
+              </a>
               <a
                 href="#contact"
                 className={`transition ${
@@ -176,7 +185,7 @@ function App() {
 
             <a href="#about">about</a>
             <a href="#projects">projects</a>
-            <a href="#blogs">blogs</a>
+            <a href="#skills">skills</a>
             <a href="#contact">contact</a>
 
           </div>
@@ -206,19 +215,26 @@ function App() {
       >
         harsh barnawa
       </p>
-
+<div class="w-15 h-15 overflow-hidden rounded-full">
+  <img 
+    src="me.jpeg" 
+    alt="profile" 
+    class="w-full h-full object-cover"
+  />
+</div>
+{/* 
       <div
         className={`w-2 h-2 rounded-full ${
           darkMode
-            ? "bg-[#d4d4d4]"
-            : "bg-[#3a3a3a]"
+          ? "bg-[#d4d4d4]"
+          : "bg-[#3a3a3a]"
         }`}
       />
-
+    */}
     </div>
 
     <p
-      className={`text-[15px] md:text-[17px] leading-[2] tracking-[-0.01em] ${
+      className={`font-serif italic text-[15px] md:text-[17px] leading-[2] tracking-[-0.01em] ${
         darkMode
           ? "text-[#cfcfcf]"
           : "text-[#4a4a4a]"
@@ -422,17 +438,13 @@ function App() {
         "JavaScript",
         "TypeScript",
         "Python",
+        "Go",
         "Java",
         "C/C++",
         "SQL",
         "Git",
-        "Docker",
-        "PostgresSQL",
-        "Prisma",
-        "Linux",
-        "Go",
-        "Postman",
-        "Cloudflare"
+
+     
       ].map((skill) => (
 
         <div
