@@ -1,634 +1,576 @@
-
 import { useState } from "react"
 
-function App() {
+const projects = [
+  {
+    id: "A",
+    title: "Chess Arena",
+    link: "https://chessbylibrary.vercel.app/",
+    tags: ["js", "auth", "frontend"],
+    desc: "JavaScript-based chess platform featuring authentication systems and complex frontend logic."
+  },
+  {
+    id: "B",
+    title: "Algo Buddy",
+    link: "https://github.com/harshbarnawa",
+    tags: ["dsa", "visualization", "react"],
+    desc: "Interactive DSA learning platform with real-time visualizations for algorithms, trees, graphs, heaps, recursion, and data structures."
+  },
+  {
+    id: "C",
+    title: "Cube Solver",
+    link: "https://github.com/harshbarnawa",
+    tags: ["algorithm", "optimization"],
+    desc: "Intelligent Rubik’s Cube solving project focused on algorithmic optimization systems."
+  },
+  {
+    id: "D",
+    title: "Edito Studio",
+    link: "https://edit-studio-sage.vercel.app/",
+    tags: ["react", "ui", "agency"],
+    desc: "Modern frontend-focused creative agency website built using React and modern UI systems."
+  }
+]
 
+const skills = [
+  ["Languages", "C/C++  Python  JavaScript  TypeScript  Java  Go  SQL"],
+  ["Frontend", "React  Next.js  Tailwind"],
+  ["Backend", "Node.js  Express  MongoDB"],
+  ["Tools", "Git"]
+]
+
+const socials = [
+  {
+    label: "github",
+    href: "https://github.com/harshbarnawa"
+  },
+  {
+    label: "linkedin",
+    href: "https://www.linkedin.com/in/harsh-barnawa/"
+  },
+  {
+    label: "twitter/x",
+    href: "https://x.com/harshbarnawa"
+  },
+  {
+    label: "codeforces",
+    href: "https://codeforces.com/profile/harshbarnawa.info"
+  }
+]
+
+export default function App() {
   const [darkMode, setDarkMode] = useState(true)
-  const [menuOpen, setMenuOpen] = useState(false)
+
+  const bg = darkMode ? "#111111" : "#f5f5f5"
+  const fg = darkMode ? "#d4d4d4" : "#111111"
+  const dim = darkMode ? "#777777" : "#7a7a7a"
+  const border = darkMode ? "#262626" : "#dddddd"
+  const head = darkMode ? "#ffffff" : "#000000"
+  const tagBg = darkMode ? "#1c1c1c" : "#ebebeb"
+  const tagText = darkMode ? "#8c8c8c" : "#666666"
+  const link = darkMode ? "#8ab4ff" : "#3366cc"
+
+  const mono = {
+    fontFamily: "'Consolas', 'Courier New', monospace"
+  }
+
+  const Section = ({ id, label, children }) => (
+    <section id={id} style={{ marginTop: "56px" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "12px",
+          marginBottom: "22px"
+        }}
+      >
+        <span
+          style={{
+            ...mono,
+            color: dim,
+            fontSize: "11px"
+          }}
+        >
+          {`/* ${label} */`}
+        </span>
+
+        <div
+          style={{
+            flex: 1,
+            height: "1px",
+            background: border
+          }}
+        />
+      </div>
+
+      {children}
+    </section>
+  )
 
   return (
     <div
-      className={`min-h-screen text-sm transition-colors duration-300 relative overflow-x-hidden ${
-        darkMode
-          ? "bg-[#111111] text-[#e5e5e5]"
-          : "bg-[#ededeb] text-[#2f2f2f]"
-      }`}
+      style={{
+        ...mono,
+        background: bg,
+        color: fg,
+        minHeight: "100vh",
+        transition: "0.3s ease",
+        paddingBottom: "60px"
+      }}
     >
+      <style>{`
+        *{
+          box-sizing:border-box;
+          scroll-behavior:smooth;
+        }
 
-     <div
-  className={`absolute top-0 left-0 w-full h-full pointer-events-none z-0 ${
-    darkMode ? "invert" : ""
-  }`}
->
+        body{
+          margin:0;
+          background:${bg};
+        }
 
+        a{
+          text-decoration:none;
+        }
 
+        a:hover{
+          text-decoration:underline;
+        }
 
-</div>
+        @keyframes blink {
+          0%,100%{opacity:1}
+          50%{opacity:0}
+        }
+      `}</style>
+
+      {/* NAVBAR */}
 
       <nav
-        className={`border-b fixed top-0 left-0 w-full z-50 backdrop-blur-sm transition-colors duration-300 ${
-         darkMode
-  ? "border-[#262626] "
-  : "border-[#d8d8d8] "
-        }`}
+        style={{
+          borderBottom: `1px solid ${border}`,
+          position: "sticky",
+          top: 0,
+          background: bg,
+          zIndex: 50
+        }}
       >
+        <div
+          style={{
+            maxWidth: "720px",
+            margin: "0 auto",
+            padding: "14px 20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "20px"
+          }}
+        >
+          <div
+            style={{
+              color: dim,
+              fontSize: "12px"
+            }}
+          >
+            <span style={{ color: link }}>harsh</span>
+            @barnawa:~$
 
-        <div className="relative z-20 max-w-3xl mx-auto px-5 md:px-6 py-5 flex items-center justify-between">
-
-          <img
-            src="/assets/logo.png"
-            alt=""
-            className="w-[100px] md:w-[140px] object-contain"
-          />
-
-          <div className="hidden md:flex items-center gap-8">
-
-            <div className="flex items-center gap-6 text-[11px] uppercase tracking-[2px] text-[#8a8a8a]">
-
-              <a
-                href="#about"
-                className={`transition ${
-                  darkMode
-                    ? "hover:text-white"
-                    : "hover:text-[#4a4a4a]"
-                }`}
-              >
-                about
-              </a>
-
-              <a
-                href="#projects"
-                className={`transition ${
-                  darkMode
-                    ? "hover:text-white"
-                    : "hover:text-[#4a4a4a]"
-                }`}
-              >
-                projects
-              </a>
-
-<a
-                href="#skills"
-                className={`transition ${
-                  darkMode
-                    ? "hover:text-white"
-                    : "hover:text-[#4a4a4a]"
-                }`}
-              >
-                skills
-              </a>
-              <a
-                href="#contact"
-                className={`transition ${
-                  darkMode
-                    ? "hover:text-white"
-                    : "hover:text-[#4a4a4a]"
-                }`}
-              >
-                contact
-              </a>
-
-              
-
-            </div>
-
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`w-14 h-7 rounded-full flex items-center px-1 transition duration-300 ${
-                darkMode
-                  ? "bg-[#2a2a2a] justify-end"
-                  : "bg-[#d0d0d0] justify-start"
-              }`}
-            >
-
-              <div
-                className={`w-5 h-5 rounded-full flex items-center justify-center transition duration-300 ${
-                  darkMode
-                    ? "bg-white"
-                    : "bg-[#2f2f2f]"
-                }`}
-              >
-
-                <img
-                  src={darkMode ? "/assets/moon.png" : "/assets/sun.png"}
-                  alt=""
-                  className={`w-3 h-3 object-contain ${
-                    darkMode
-                      ? ""
-                      : "invert"
-                  }`}
-                />
-
-              </div>
-
-            </button>
-
+            <span
+              style={{
+                display: "inline-block",
+                width: "7px",
+                height: "13px",
+                background: dim,
+                marginLeft: "5px",
+                verticalAlign: "middle",
+                animation: "blink 1s step-end infinite"
+              }}
+            />
           </div>
-
-          <div className="md:hidden flex items-center gap-4">
-
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`w-12 h-6 rounded-full flex items-center px-1 transition duration-300 ${
-                darkMode
-                  ? "bg-[#2a2a2a] justify-end"
-                  : "bg-[#d0d0d0] justify-start"
-              }`}
-            >
-
-              <div
-                className={`w-4 h-4 rounded-full flex items-center justify-center transition duration-300 ${
-                  darkMode
-                    ? "bg-white"
-                    : "bg-[#2f2f2f]"
-                }`}
-              >
-
-                <img
-                  src={darkMode ? "/assets/moon.png" : "/assets/sun.png"}
-                  alt=""
-                  className={`w-2 h-2 object-contain ${
-                    darkMode
-                      ? ""
-                      : "invert"
-                  }`}
-                />
-
-              </div>
-
-            </button>
-
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="flex flex-col gap-[4px]"
-            >
-
-              <div className={`w-5 h-[1.5px] ${darkMode ? "bg-white" : "bg-black"}`} />
-              <div className={`w-5 h-[1.5px] ${darkMode ? "bg-white" : "bg-black"}`} />
-              <div className={`w-5 h-[1.5px] ${darkMode ? "bg-white" : "bg-black"}`} />
-
-            </button>
-
-          </div>
-
-        </div>
-
-        {menuOpen && (
 
           <div
-            className={`md:hidden border-t px-5 py-5 flex flex-col gap-5 text-[11px] uppercase tracking-[2px] relative z-20 ${
-              darkMode
-                ? "border-[#262626] bg-[#161616]/95 text-[#8a8a8a]"
-                : "border-[#d8d8d8] bg-[#e7e7e5]/95 text-[#8a8a8a]"
-            }`}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "18px",
+              flexWrap: "wrap"
+            }}
           >
+            {["about", "projects", "skills", "contact"].map((item) => (
+              <a
+                key={item}
+                href={`#${item}`}
+                style={{
+                  color: dim,
+                  fontSize: "12px"
+                }}
+              >
+                {item}
+              </a>
+            ))}
 
-            <a href="#about">about</a>
-            <a href="#projects">projects</a>
-            <a href="#skills">skills</a>
-            <a href="#contact">contact</a>
-
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              style={{
+                background: "transparent",
+                border: `1px solid ${border}`,
+                color: dim,
+                fontFamily: "inherit",
+                fontSize: "11px",
+                padding: "4px 10px",
+                cursor: "pointer"
+              }}
+            >
+              {darkMode ? "light" : "dark"}
+            </button>
           </div>
-
-        )}
-
+        </div>
       </nav>
 
-<div
-  className={`hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-50 flex-col gap-4`}
->
-
-  {[
-    {
-      icon: "/assets/github.png",
-      link: "https://github.com/harshbarnawa",
-      alt: "github"
-    },
-    {
-      icon: "/assets/linkedin.png",
-      link: "https://www.linkedin.com/in/harsh-barnawa/",
-      alt: "linkedin"
-    },
-    {
-      icon: "/assets/twitter.png",
-      link: "https://x.com/harshbarnawa",
-      alt: "twitter"
-    },
-    {
-      icon: "/assets/codeforces.png",
-      link: "https://codeforces.com/profile/harshbarnawa.info",
-      alt: "codeforces"
-    }
-  ].map((item) => (
-
-    <a
-      key={item.alt}
-      href={item.link}
-      target="_blank"
-      rel="noreferrer"
-      className={`group w-12 h-12 rounded-full border flex items-center justify-center backdrop-blur-md transition duration-300 ${
-        darkMode
-          ? "border-[#2b2b2b] bg-[#161616]/80 hover:bg-[#1f1f1f]"
-          : "border-[#d8d8d8] bg-[#f3f3f3]/80 hover:bg-white"
-      }`}
-    >
-
-      <img
-        src={item.icon}
-        alt={item.alt}
-        className={`w-5 h-5 object-contain opacity-60 group-hover:opacity-100 transition duration-300 ${
-          darkMode
-            ? "invert group-hover:invert-0"
-            : ""
-        }`}
-      />
-
-    </a>
-
-  ))}
-
-</div>
-   <section className="relative z-10 max-w-3xl mx-auto px-5 md:px-6 pt-40 md:pt-52 pb-24 md:pb-28">
-
-  <div
-    className={`border rounded-[28px] p-8 md:p-10 transition ${
-      darkMode
-        ? "border-[#262626] bg-[#151515]/70"
-        : "border-[#d8d8d8] bg-[#efefef]/70"
-    }`}
-  >
-
-    <div className="flex items-center justify-between mb-10">
-
-      <p
-        className={`text-[11px] uppercase tracking-[3px] ${
-          darkMode
-            ? "text-[#727272]"
-            : "text-[#8a8a8a]"
-        }`}
-      >
-        harsh barnawa
-      </p>
-<div class="w-15 h-15 overflow-hidden rounded-full">
-  <img 
-    src="me.jpeg" 
-    alt="profile" 
-    class="w-full h-full object-cover"
-  />
-</div>
-{/* 
       <div
-        className={`w-2 h-2 rounded-full ${
-          darkMode
-          ? "bg-[#d4d4d4]"
-          : "bg-[#3a3a3a]"
-        }`}
-      />
-    */}
-    </div>
-
-    <p
-      className={`font-serif italic text-[15px] md:text-[17px] leading-[2] tracking-[-0.01em] ${
-        darkMode
-          ? "text-[#cfcfcf]"
-          : "text-[#4a4a4a]"
-      }`}
-    >
-      I like building clean things and overthinking small details that probably don't matter that much. mostly building random projects, solving cpp problems and rebuilding things again because “something still feels off”</p>
-
-  </div>
-  <div
-  className={`mt-10 border rounded-[24px] p-5 overflow-hidden ${
-    darkMode
-      ? "border-[#262626] bg-[#151515]/70"
-      : "border-[#d8d8d8] bg-[#efefef]/70"
-  }`}
->
-
-  <img
-    src={`https://ghchart.rshah.org/${
-      darkMode ? "4a4a4a" : "2f2f2f"
-    }/harshbarnawa`}
-    alt="GitHub Contribution Graph"
-    className="w-full opacity-80"
-  />
-
-</div>
-
-</section>
-
-
-      <section
-        id="projects"
-        className={`relative z-10 border-t ${
-          darkMode
-            ? "border-[#262626]"
-            : "border-[#d8d8d8]"
-        }`}
+        style={{
+          maxWidth: "720px",
+          margin: "0 auto",
+          padding: "0 20px"
+        }}
       >
+        {/* HERO */}
 
-        <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
-
-          <h2
-            className={`text-[11px] uppercase tracking-[3px] mb-10 ${
-              darkMode
-                ? "text-[#7a7a7a]"
-                : "text-[#8a8a8a]"
-            }`}
+        <section
+          style={{
+            paddingTop: "70px"
+          }}
+        >
+          <div
+            style={{
+              color: dim,
+              fontSize: "12px",
+              marginBottom: "22px"
+            }}
           >
-            Projects
-          </h2>
+            {`> whoami`}
+          </div>
 
-          <div className="space-y-14">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "20px",
+              flexWrap: "wrap"
+            }}
+          >
+            <div>
+              <h1
+                style={{
+                  margin: 0,
+                  color: head,
+                  fontSize: "26px",
+                  fontWeight: "normal"
+                }}
+              >
+                Harsh Barnawa
+              </h1>
 
-            {[
-              {
-                title: "Chess Arena",
-                link: "https://chessbylibrary.vercel.app/",
-                desc: "JavaScript-based chess platform featuring authentication systems and complex frontend logic."
-              },
-              {
-                title: "Algo Buddy",
-                link: "https://github.com/harshbarnawa",
-                desc: "Interactive DSA learning platform with real-time visualizations for algorithms, trees, graphs, heaps, recursion, and data structures."
-              },
-              {
-                title: "Cube Solver",
-                link: "https://github.com/harshbarnawa",
-                desc: "Intelligent Rubik’s Cube solving project focused on algorithmic optimization systems."
-              },
-              {
-                title: "Edito Studio",
-                link: "https://edit-studio-sage.vercel.app/",
-                desc: "Modern frontend-focused creative agency website built using React and modern UI systems."
-              },
+              <div
+                style={{
+                  color: dim,
+                  fontSize: "12px",
+                  marginTop: "6px"
+                }}
+              >
+                engineering student · competitive programmer · builder
+              </div>
+            </div>
 
-            ].map((project) => (
+            <div
+              style={{
+                width: "72px",
+                height: "72px",
+                overflow: "hidden",
+                borderRadius: "999px",
+                border: `1px solid ${border}`
+              }}
+            >
+              <img
+                src="me.jpeg"
+                alt="profile"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover"
+                }}
+              />
+            </div>
+          </div>
 
-              <div key={project.title}>
+          <p
+            style={{
+              marginTop: "28px",
+              lineHeight: "1.9",
+              color: fg,
+              maxWidth: "620px",
+              fontSize: "14px"
+            }}
+          >
+            I like building clean things and overthinking small details that probably don't matter that much. mostly building random projects, solving cpp problems and rebuilding things again because{" "}
+            <span style={{ color: dim }}>
+              “something still feels off”
+            </span>
+          </p>
+        </section>
 
-                <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
+        {/* ABOUT */}
 
-                  <h3
-                    className={`font-medium text-base ${
-                      darkMode
-                        ? "text-white"
-                        : "text-[#3a3a3a]"
-                    }`}
-                  >
-                    {project.title}
-                  </h3>
+        <Section id="about" label="about">
+          <div
+            style={{
+              border: `1px solid ${border}`,
+              padding: "18px",
+              borderRadius: "4px"
+            }}
+          >
+            <div
+              style={{
+                color: dim,
+                fontSize: "11px",
+                marginBottom: "14px"
+              }}
+            >
+              {`// github activity — harshbarnawa`}
+            </div>
 
+            <img
+              src={`https://ghchart.rshah.org/${
+                darkMode ? "555555" : "333333"
+              }/harshbarnawa`}
+              alt="github graph"
+              style={{
+                width: "100%",
+                opacity: 0.75
+              }}
+            />
+          </div>
+        </Section>
+
+        {/* PROJECTS */}
+
+        <Section id="projects" label="projects">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "22px 1fr",
+                gap: "0 16px",
+                padding: "18px 0",
+                borderBottom:
+                  index !== projects.length - 1
+                    ? `1px solid ${border}`
+                    : "none"
+              }}
+            >
+              <span
+                style={{
+                  color: dim,
+                  fontSize: "12px",
+                  paddingTop: "2px"
+                }}
+              >
+                {project.id}.
+              </span>
+
+              <div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    flexWrap: "wrap",
+                    marginBottom: "8px"
+                  }}
+                >
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noreferrer"
-                    className={`text-[11px] transition ${
-                      darkMode
-                        ? "text-[#7a7a7a] hover:text-white"
-                        : "text-[#8a8a8a] hover:text-[#3a3a3a]"
-                    }`}
+                    style={{
+                      color: link,
+                      fontSize: "15px"
+                    }}
                   >
-                    project link
+                    {project.title}
                   </a>
 
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      style={{
+                        background: tagBg,
+                        color: tagText,
+                        padding: "2px 7px",
+                        borderRadius: "3px",
+                        fontSize: "10px"
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
 
                 <p
-                  className={`mt-4 leading-8 ${
-                    darkMode
-                      ? "text-[#a1a1a1]"
-                      : "text-[#5f5f5f]"
-                  }`}
+                  style={{
+                    margin: 0,
+                    color: dim,
+                    lineHeight: "1.8",
+                    fontSize: "13px"
+                  }}
                 >
                   {project.desc}
                 </p>
-
               </div>
+            </div>
+          ))}
+        </Section>
 
-            ))}
+        {/* SKILLS */}
 
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-<section
-  id="skills"
-  className={`relative z-10 border-t ${
-    darkMode
-      ? "border-[#262626]"
-      : "border-[#d8d8d8]"
-  }`}
->
-
-  <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
-
-    <h2
-      className={`text-[11px] uppercase tracking-[3px] mb-10 ${
-        darkMode
-          ? "text-[#7a7a7a]"
-          : "text-[#8a8a8a]"
-      }`}
-    >
-      Skills & Technologies
-    </h2>
-
-    <div className="flex flex-wrap gap-3">
-
-      {[
-        "React",
-        "Next.js",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Tailwind",
-        "JavaScript",
-        "TypeScript",
-        "Python",
-        "Go",
-        "Java",
-        "C/C++",
-        "SQL",
-        "Git",
-
-     
-      ].map((skill) => (
-
-        <div
-          key={skill}
-          className={`border rounded-full px-4 py-2 text-[13px] transition duration-300 cursor-default ${
-            darkMode
-              ? "border-[#2b2b2b] bg-[#171717]/70 text-[#cfcfcf] hover:bg-[#1e1e1e]"
-              : "border-[#d4d4d4] bg-[#f2f2f2]/70 text-[#4a4a4a] hover:bg-[#ebebeb]"
-          }`}
-        >
-          {skill}
-        </div>
-
-      ))}
-
-    </div>
-
-  </div>
-
-</section>
-
-
-      <section
-        id="contact"
-        className={`relative z-10 border-t ${
-          darkMode
-            ? "border-[#262626]"
-            : "border-[#d8d8d8]"
-        }`}
-      >
-
-        <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
-
-          <h2
-            className={`text-[11px] uppercase tracking-[3px] mb-8 ${
-              darkMode
-                ? "text-[#7a7a7a]"
-                : "text-[#8a8a8a]"
-            }`}
+        <Section id="skills" label="skills_and_technologies">
+          <div
+            style={{
+              display: "grid",
+              gap: "12px"
+            }}
           >
-            Contact
-          </h2>
+            {skills.map(([category, value]) => (
+              <div
+                key={category}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "110px 1fr",
+                  gap: "0 18px",
+                  fontSize: "13px"
+                }}
+              >
+                <span
+                  style={{
+                    color: dim
+                  }}
+                >
+                  {category}
+                </span>
 
-          <div className="mb-10 space-y-3">
-
-            <a
-              href="mailto:harshbarnawa.info@gmail.com"
-              className={`block transition break-all ${
-                darkMode
-                  ? "text-[#a1a1a1] hover:text-white"
-                  : "text-[#5f5f5f] hover:text-[#2f2f2f]"
-              }`}
-            >
-              harshbarnawa.info@gmail.com
-            </a>
-
-            <a
-              href="https://wa.me/916264232915"
-              target="_blank"
-              rel="noreferrer"
-              className={`block transition ${
-                darkMode
-                  ? "text-[#a1a1a1] hover:text-white"
-                  : "text-[#5f5f5f] hover:text-[#2f2f2f]"
-              }`}
-            >
-              +91 62642 32915
-            </a>
-
+                <span
+                  style={{
+                    color: fg,
+                    lineHeight: "1.8"
+                  }}
+                >
+                  {value}
+                </span>
+              </div>
+            ))}
           </div>
+        </Section>
 
-          <div className="flex items-center flex-wrap gap-5">
+        {/* CONTACT */}
 
-            <a
-              href="https://github.com/harshbarnawa"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="/assets/github.png"
-                alt=""
-                className={`w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300 ${
-                  darkMode
-                    ? "invert hover:invert-0"
-                    : ""
-                }`}
-              />
-            </a>
+        <Section id="contact" label="contact">
+          <div
+            style={{
+              display: "grid",
+              gap: "10px"
+            }}
+          >
+            <div>
+              <span
+                style={{
+                  color: dim,
+                  display: "inline-block",
+                  width: "100px"
+                }}
+              >
+                email
+              </span>
 
-            <a
-              href="https://www.linkedin.com/in/harsh-barnawa/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="/assets/linkedin.png"
-                alt=""
-                className={`w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300 ${
-                  darkMode
-                    ? "invert hover:invert-0"
-                    : ""
-                }`}
-              />
-            </a>
+              <a
+                href="mailto:harshbarnawa.info@gmail.com"
+                style={{
+                  color: link
+                }}
+              >
+                harshbarnawa.info@gmail.com
+              </a>
+            </div>
 
-            <a
-              href="https://x.com/harshbarnawa"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="/assets/twitter.png"
-                alt=""
-                className={`w-10 h-10 object-contain opacity-60 hover:opacity-100 transition duration-300 ${
-                  darkMode
-                    ? "invert hover:invert-0"
-                    : ""
-                }`}
-              />
-            </a>
+            <div>
+              <span
+                style={{
+                  color: dim,
+                  display: "inline-block",
+                  width: "100px"
+                }}
+              >
+                whatsapp
+              </span>
 
-            <a
-              href="https://codeforces.com/profile/harshbarnawa.info"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="/assets/codeforces.png"
-                alt=""
-                className={`w-12 h-12 object-contain opacity-60 hover:opacity-100 transition duration-300 ${
-                  darkMode
-                    ? "invert hover:invert-0"
-                    : ""
-                }`}
-              />
-            </a>
+              <a
+                href="https://wa.me/916264232915"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  color: link
+                }}
+              >
+                +91 62642 32915
+              </a>
+            </div>
 
+            {socials.map((social) => (
+              <div key={social.label}>
+                <span
+                  style={{
+                    color: dim,
+                    display: "inline-block",
+                    width: "100px"
+                  }}
+                >
+                  {social.label}
+                </span>
+
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: link
+                  }}
+                >
+                  {social.href.replace("https://", "")}
+                </a>
+              </div>
+            ))}
           </div>
+        </Section>
 
-        </div>
+        {/* FOOTER */}
 
-      </section>
-
-      <footer
-        className={`relative z-10 border-t transition-colors duration-300 ${
-          darkMode
-            ? "border-[#262626] bg-[#161616]/80"
-            : "border-[#d8d8d8] bg-[#e7e7e5]/80"
-        }`}
-      >
-
-        <div
-          className={`max-w-3xl mx-auto px-5 md:px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-2 text-[11px] ${
-            darkMode
-              ? "text-[#7a7a7a]"
-              : "text-[#8a8a8a]"
-          }`}
+        <footer
+          style={{
+            marginTop: "60px",
+            paddingTop: "18px",
+            borderTop: `1px solid ${border}`,
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "10px",
+            flexWrap: "wrap",
+            color: dim,
+            fontSize: "11px"
+          }}
         >
+          <span>© 2026 Harsh Barnawa</span>
 
-          <p>
-            © 2026 Harsh Barnawa
-          </p>
-
-          <p>
-            Built by Harsh Barnawa
-          </p>
-
-        </div>
-
-      </footer>
-
+          <span>Built by Harsh Barnawa</span>
+        </footer>
+      </div>
     </div>
   )
 }
-
-export default App
