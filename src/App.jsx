@@ -67,16 +67,6 @@ function App() {
                 projects
               </a>
 
-              <a
-                href="#blogs"
-                className={`transition ${
-                  darkMode
-                    ? "hover:text-white"
-                    : "hover:text-[#4a4a4a]"
-                }`}
-              >
-                blogs
-              </a>
 
               <a
                 href="#contact"
@@ -397,94 +387,6 @@ function App() {
 
       </section>
 
-      <section
-        id="blogs"
-        className={`relative z-10 border-t ${
-          darkMode
-            ? "border-[#262626]"
-            : "border-[#d8d8d8]"
-        }`}
-      >
-
-        <div className="max-w-3xl mx-auto px-5 md:px-6 py-14">
-
-          <h2
-            className={`text-[11px] uppercase tracking-[3px] mb-10 ${
-              darkMode
-                ? "text-[#7a7a7a]"
-                : "text-[#8a8a8a]"
-            }`}
-          >
-            Blogs
-          </h2>
-
-          <div className="space-y-10">
-
-            {[
-              {
-                title: "Rebuilding This Portfolio Again",
-                desc: "Turns out more animations don't make the work look smarterr..after rebuilding this way too many times I realized simple layouts age better than aggressive UI animations...",
-                date: "May 2026"
-              },
-              {
-                title: "How I Connect People",
-                desc: "I usually start being myself and share my thoughts to other to make network, Like it's easy to connect people by doing whatever you do and show whatever you are...",
-                date: "May 2026"
-              }
-            ].map((blog) => (
-
-              <div
-                key={blog.title}
-                className={`border rounded-2xl p-6 transition ${
-                  darkMode
-                    ? "border-[#262626] hover:bg-[#171717]"
-                    : "border-[#d8d8d8] hover:bg-[#e8e8e8]"
-                }`}
-              >
-
-                <div className="flex items-center justify-between gap-4 mb-4">
-
-                  <h3
-                    className={`text-base font-medium ${
-                      darkMode
-                        ? "text-white"
-                        : "text-[#2f2f2f]"
-                    }`}
-                  >
-                    {blog.title}
-                  </h3>
-
-                  <p
-                    className={`text-[10px] uppercase tracking-[2px] ${
-                      darkMode
-                        ? "text-[#6f6f6f]"
-                        : "text-[#9a9a9a]"
-                    }`}
-                  >
-                    {blog.date}
-                  </p>
-
-                </div>
-
-                <p
-                  className={`leading-7 text-[14px] ${
-                    darkMode
-                      ? "text-[#a1a1a1]"
-                      : "text-[#5f5f5f]"
-                  }`}
-                >
-                  {blog.desc}
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
 
 
 <section
