@@ -21,33 +21,15 @@ function App() {
   }`}
 >
 
- <div
-  className={`absolute top-0 left-0 w-full h-full bg-repeat ${
-    darkMode
-      ? "opacity-[0.05]"
-      : "opacity-[0.1]"
-  }`}
-  style={{
-    backgroundImage: `
-      linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.1),
-        rgba(0,0,0,250)
-      ),
-      url('/assets/background.jpg')
-    `,
-    backgroundSize: "300px",
-    backgroundPosition: "center top",
-  }}
-/>
+
 
 </div>
 
       <nav
         className={`border-b fixed top-0 left-0 w-full z-50 backdrop-blur-sm transition-colors duration-300 ${
          darkMode
-  ? "border-[#262626] bg-gradient-to-r from-[#2a2a2a]/95 via-[#1b1b1b]/90 to-[#141414]/85"
-  : "border-[#d8d8d8] bg-gradient-to-r from-[#ffffff]/95 via-[#f1f1ef]/90 to-[#e7e7e5]/85"
+  ? "border-[#262626] "
+  : "border-[#d8d8d8] "
         }`}
       >
 
