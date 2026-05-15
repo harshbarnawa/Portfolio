@@ -32,10 +32,14 @@ function Navbar({
           <Link to="/">
 
             <img
-              src="/assets/logo.png"
-              alt=""
-              className="w-[100px] md:w-[140px] object-contain"
-            />
+  src="/assets/logo.png"
+  alt=""
+  className={`w-[100px] md:w-[140px] object-contain transition duration-300 ${
+    darkMode
+      ? ""
+      : "invert brightness-75 opacity-80"
+  }`}
+/>
 
           </Link>
 
