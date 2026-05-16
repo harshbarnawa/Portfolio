@@ -16,15 +16,15 @@ function Projects() {
     
     {
       title: "chessBee",
-      live: "https://chessbylibrary.vercel.app/",
-      repo: "https://github.com/harshbarnawa",
+      live: "https://chessbee.vercel.app/",
+      repo: "https://github.com/harshbarnawa/chessbee",
       desc: "Online/Offline chess platform with authentication, realtime gameplay logic and custom UI systems."
     },
     
     {
       title: "Edito Studio",
-      live: "https://edit-studio-sage.vercel.app/",
-      repo: "https://github.com/harshbarnawa",
+      live: "https://edito-studios.vercel.app/",
+      repo: "https://github.com/harshbarnawa/editoStudios",
       desc: "Minimal creative agency website built with React and modern frontend interactions."
     }
 
