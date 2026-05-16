@@ -15,18 +15,12 @@ function Projects() {
     },
     
     {
-      title: "Chess Arena",
+      title: "chessBee",
       live: "https://chessbylibrary.vercel.app/",
       repo: "https://github.com/harshbarnawa",
-      desc: "Online chess platform with authentication, realtime gameplay logic and custom UI systems."
+      desc: "Online/Offline chess platform with authentication, realtime gameplay logic and custom UI systems."
     },
-    {
-      title: "Cube Solver",
-      live: "https://github.com/harshbarnawa",
-      repo: "https://github.com/harshbarnawa",
-      desc: "Rubik’s cube solver focused on algorithms, rotations and optimization logic."
-    },
-
+    
     {
       title: "Edito Studio",
       live: "https://edit-studio-sage.vercel.app/",
