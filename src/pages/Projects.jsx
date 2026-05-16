@@ -6,20 +6,20 @@ function Projects() {
 
   const projects = [
 
+    
+    {
+      title: "h4chat",
+      live: "https://h4chat.vercel.app/",
+      repo: "https://https://github.com/h4dotai/h4chat",
+      desc: "Random terminal style encrypted chat app...just realtime private communication with Go + WebSockets."
+    },
+    
     {
       title: "Chess Arena",
       live: "https://chessbylibrary.vercel.app/",
       repo: "https://github.com/harshbarnawa",
       desc: "Online chess platform with authentication, realtime gameplay logic and custom UI systems."
     },
-
-    {
-      title: "Algo Buddy",
-      live: "https://github.com/harshbarnawa",
-      repo: "https://github.com/harshbarnawa",
-      desc: "DSA visualizer for trees, graphs, recursion and different problem solving concepts."
-    },
-
     {
       title: "Cube Solver",
       live: "https://github.com/harshbarnawa",
