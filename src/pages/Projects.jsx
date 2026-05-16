@@ -22,7 +22,7 @@ function Projects() {
     },
     
     {
-      title: "Edito Studio",
+      title: "editostudios",
       live: "https://edito-studios.vercel.app/",
       repo: "https://github.com/harshbarnawa/editoStudios",
       desc: "Minimal creative agency website built with React and modern frontend interactions."
