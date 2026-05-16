@@ -271,30 +271,21 @@ clear      - clear terminal
                   : "border-[#d8d8d8] bg-[#efefef]/70"
               }`}
             >
+<div className="flex items-center justify-between mb-10">
+  <p
+    className={`text-[11px] uppercase tracking-[3px] ${
+      darkMode ? "text-[#727272]" : "text-[#8a8a8a]"
+    }`}
+  >
+    harsh barnawa
+  </p>
 
-              <div className="flex items-center justify-between mb-10">
-
-                <p
-                  className={`text-[11px] uppercase tracking-[3px] ${
-                    darkMode
-                      ? "text-[#727272]"
-                      : "text-[#8a8a8a]"
-                  }`}
-                >
-                  harsh barnawa
-                </p>
-
-                <div className="w-15 h-15 overflow-hidden rounded-full">
-
-                  <img
-                    src="/me.jpeg"
-                    alt="profile"
-                    className="w-full h-full object-cover"
-                  />
-
-                </div>
-
-              </div>
+  <img
+    src="/me.jpeg"
+    alt="profile"
+    className="w-[52px] h-[52px] object-cover rounded-2xl"
+  />
+</div>
 
               <p
                 className={`font-serif italic text-[15px] md:text-[17px] leading-[2] tracking-[-0.01em] ${
