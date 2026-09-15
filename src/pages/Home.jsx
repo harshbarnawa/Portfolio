@@ -59,7 +59,7 @@ function Home() {
         window.location.href = "/contact"
         output = "navigating to contact..."
       } else if (lower === "resume") {
-        window.open("/assets/Resume1.pdf", "_blank")
+        window.open("/assets/Resume.pdf", "_blank")
         output = "opening resume..."
       } else if (lower === "home") {
         window.location.href = "/"
