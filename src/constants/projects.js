@@ -16,8 +16,8 @@ export const ProjectsData = [
   },
     {
     title: "1ClickStat",
-    live: "[https://1clickstat.streamlit.app/](https://1clickstat.streamlit.app/)",
-    repo: "[https://github.com/harshbarnawa/1clickstat](https://github.com/harshbarnawa/1clickstat)",
+    live: "https://1clickstat.streamlit.app",
+    repo: "https://github.com/harshbarnawa/1clickstat",
     desc: "Interactive data analysis dashboard that lets users upload datasets and quickly explore data, statistics and visual insights.",
     image: "/assets/uii.png",
   },
