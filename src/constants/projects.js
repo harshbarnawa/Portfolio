@@ -14,13 +14,13 @@ export const ProjectsData = [
     desc: "VS Code extension for easy code snippets, custom commands, competitive programming toolkit and faster development workflow.",
     image: "/assets/openguido.png",
   },
-  {
-  title: "MinToks",
-  live: "https://mintoks.vercel.app/",
-  repo: "https://github.com/harshbarnawa/mintoks",
-  desc: "Minimal short-video sharing platform featuring authentication, responsive UI, smooth interactions and a clean modern experience.",
-  image: "/assets/mintoks.png",
-},
+    {
+    title: "1ClickStat",
+    live: "[https://1clickstat.streamlit.app/](https://1clickstat.streamlit.app/)",
+    repo: "[https://github.com/harshbarnawa/1clickstat](https://github.com/harshbarnawa/1clickstat)",
+    desc: "Interactive data analysis dashboard that lets users upload datasets and quickly explore data, statistics and visual insights.",
+    image: "/assets/uii.png",
+  },
   {
     title: "h4chat",
     live: "https://h4chat.vercel.app/",
@@ -42,6 +42,13 @@ export const ProjectsData = [
     desc: "Minimal creative agency website built with React and modern frontend interactions.",
     image: "/assets/editostudio.png",
   },
+    {
+  title: "MinToks",
+  live: "https://mintoks.vercel.app/",
+  repo: "https://github.com/harshbarnawa/mintoks",
+  desc: "Minimal short-video sharing platform featuring authentication, responsive UI, smooth interactions and a clean modern experience.",
+  image: "/assets/mintoks.png",
+},
   {
     title: "Go-Learn",
     live: "https://github.com/harshbarnawa/Go-learn",

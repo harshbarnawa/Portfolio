@@ -11,6 +11,10 @@ export const SkillsData = [
   { name: "C++", level: "advanced" },
   { name: "SQL", level: "intermediate" },
   { name: "Git", level: "advanced" },
+  { name: "Numpy", level: "intermediate" },
+  { name: "Pandas", level: "advanced" },
+  { name: "Matplotlib", level: "intermediate" },
+  { name: "Pytorch", level: "intermediate" },
 ]
 
 export const ExploringData = ["ai tools", "backend"]
