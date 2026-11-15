@@ -280,3 +280,26 @@ body {
   :root[data-theme="brutal"] #root main[data-page-content="projects"] .grid > div { box-shadow:4px 4px 0 #171717 !important; }
   :root[data-theme="liquid"] #root main[data-page-content] > section::before { width:100vw; height:320px; filter:blur(42px); }
 }
+
+
+/* Manual light/dark switch overrides the active theme's base luminance. */
+:root[data-theme][data-mode="light"] {
+  color-scheme:light;
+  --studio-bg:#f2f1ed;
+  --studio-fg:#202020;
+  --studio-surface:rgba(255,255,255,.72);
+  --studio-border:rgba(0,0,0,.15);
+}
+:root[data-theme][data-mode="dark"] {
+  color-scheme:dark;
+  --studio-bg:#090d12;
+  --studio-fg:#edf1f4;
+  --studio-surface:rgba(255,255,255,.075);
+  --studio-border:rgba(255,255,255,.16);
+}
+:root[data-theme="brutal"][data-mode="light"] { --studio-bg:#f7f2e8; --studio-fg:#171717; --studio-surface:#fffdf6; --studio-border:#171717; }
+:root[data-theme="editorial"][data-mode="light"] { --studio-bg:#f1efe8; --studio-fg:#181818; --studio-surface:#f8f6ef; --studio-border:rgba(0,0,0,.2); }
+:root[data-theme="clay"][data-mode="light"] { --studio-bg:#e9e9f4; --studio-fg:#29283a; --studio-surface:#efeff8; --studio-border:rgba(255,255,255,.8); }
+:root[data-theme="luxury"][data-mode="dark"] { --studio-bg:#100e0c; --studio-fg:#eee7dc; --studio-surface:rgba(201,169,110,.06); --studio-border:rgba(201,169,110,.24); }
+:root[data-theme="retro"][data-mode="dark"] { --studio-bg:#10101e; --studio-fg:#f8f3ff; --studio-surface:rgba(15,17,34,.88); --studio-border:rgba(80,245,220,.32); }
+:root[data-theme="maximal"][data-mode="dark"] { --studio-bg:#17111c; --studio-fg:#fff5e9; --studio-surface:rgba(255,184,77,.07); --studio-border:rgba(255,184,77,.32); }
