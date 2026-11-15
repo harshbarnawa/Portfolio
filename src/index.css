@@ -97,3 +97,21 @@ body {
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }
+
+/* Appearance override keeps the manual light/dark control functional. */
+:root[data-mode="light"] { color-scheme:light; --studio-bg:#f2f1ed; --studio-fg:#202020; --studio-border:rgba(0,0,0,.15); }
+:root[data-mode="dark"] { color-scheme:dark; }
+
+/* Theme-aware neutral surfaces across existing pages and shared components. */
+#root [class*="bg-[#151515"], #root [class*="bg-[#161616"], #root [class*="bg-[#171717"], #root [class*="bg-[#1a1a1a"], #root [class*="bg-[#efefef"], #root [class*="bg-[#f2f2f2"], #root [class*="bg-[#f3f3f3"], #root [class*="bg-[#e8e8e8"] {
+  background-color:var(--studio-surface) !important;
+}
+#root [class*="border-[#262626"], #root [class*="border-[#2b2b2b"], #root [class*="border-[#303030"], #root [class*="border-[#333"], #root [class*="border-[#d8d8d8"], #root [class*="border-[#d4d4d4"], #root [class*="border-[#ccc"] {
+  border-color:var(--studio-border) !important;
+}
+#root input, #root textarea, #root select { accent-color:var(--studio-accent); }
+#root a, #root button { transition-property:color,background-color,border-color,box-shadow,transform,opacity; transition-duration:.25s; }
+:root[data-theme="brutal"] #root .rounded-full { border-radius:5px; }
+:root[data-theme="editorial"] #root .rounded-full { border-radius:2px; }
+:root[data-theme="clay"] #root button, :root[data-theme="clay"] #root a { box-shadow:4px 5px 12px rgba(80,75,140,.12); }
+:root[data-theme="retro"] #root a:hover, :root[data-theme="retro"] #root button:hover { text-shadow:0 0 12px var(--studio-accent); }
