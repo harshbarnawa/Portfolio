@@ -303,3 +303,75 @@ body {
 :root[data-theme="luxury"][data-mode="dark"] { --studio-bg:#100e0c; --studio-fg:#eee7dc; --studio-surface:rgba(201,169,110,.06); --studio-border:rgba(201,169,110,.24); }
 :root[data-theme="retro"][data-mode="dark"] { --studio-bg:#10101e; --studio-fg:#f8f3ff; --studio-surface:rgba(15,17,34,.88); --studio-border:rgba(80,245,220,.32); }
 :root[data-theme="maximal"][data-mode="dark"] { --studio-bg:#17111c; --studio-fg:#fff5e9; --studio-surface:rgba(255,184,77,.07); --studio-border:rgba(255,184,77,.32); }
+
+
+/* Keep theme surfaces readable when the user manually flips luminance. */
+:root[data-theme="aurora"][data-mode="light"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="aurora"][data-mode="light"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="aurora"][data-mode="light"] #root main[data-page-content="blog"] article,
+:root[data-theme="aurora"][data-mode="light"] #root main[data-page-content="contact"] section > div > div.border,
+:root[data-theme="liquid"][data-mode="light"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="liquid"][data-mode="light"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="liquid"][data-mode="light"] #root main[data-page-content="blog"] article,
+:root[data-theme="liquid"][data-mode="light"] #root main[data-page-content="contact"] section > div > div.border,
+:root[data-theme="bento"][data-mode="light"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="bento"][data-mode="light"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="bento"][data-mode="light"] #root main[data-page-content="blog"] article,
+:root[data-theme="bento"][data-mode="light"] #root main[data-page-content="contact"] section > div > div.border,
+:root[data-theme="luxury"][data-mode="light"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="luxury"][data-mode="light"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="luxury"][data-mode="light"] #root main[data-page-content="blog"] article,
+:root[data-theme="luxury"][data-mode="light"] #root main[data-page-content="contact"] section > div > div.border,
+:root[data-theme="retro"][data-mode="light"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="retro"][data-mode="light"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="retro"][data-mode="light"] #root main[data-page-content="blog"] article,
+:root[data-theme="retro"][data-mode="light"] #root main[data-page-content="contact"] section > div > div.border,
+:root[data-theme="maximal"][data-mode="light"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="maximal"][data-mode="light"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="maximal"][data-mode="light"] #root main[data-page-content="blog"] article,
+:root[data-theme="maximal"][data-mode="light"] #root main[data-page-content="contact"] section > div > div.border {
+  background:rgba(255,255,255,.76) !important;
+  border-color:rgba(0,0,0,.14) !important;
+  box-shadow:0 18px 48px rgba(0,0,0,.09) !important;
+}
+:root[data-theme="liquid"][data-mode="light"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="liquid"][data-mode="light"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="liquid"][data-mode="light"] #root main[data-page-content="blog"] article {
+  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,255,255,.52) 48%,rgba(153,226,239,.22)) !important;
+  border-color:rgba(255,255,255,.9) !important;
+  box-shadow:0 24px 60px rgba(75,88,120,.14),inset 0 1px rgba(255,255,255,.95) !important;
+}
+:root[data-theme="brutal"][data-mode="dark"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="brutal"][data-mode="dark"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="brutal"][data-mode="dark"] #root main[data-page-content="blog"] article,
+:root[data-theme="brutal"][data-mode="dark"] #root main[data-page-content="contact"] section > div > div.border,
+:root[data-theme="monochrome"][data-mode="dark"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="monochrome"][data-mode="dark"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="monochrome"][data-mode="dark"] #root main[data-page-content="blog"] article,
+:root[data-theme="monochrome"][data-mode="dark"] #root main[data-page-content="contact"] section > div > div.border,
+:root[data-theme="editorial"][data-mode="dark"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="editorial"][data-mode="dark"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="editorial"][data-mode="dark"] #root main[data-page-content="blog"] article,
+:root[data-theme="editorial"][data-mode="dark"] #root main[data-page-content="contact"] section > div > div.border,
+:root[data-theme="clay"][data-mode="dark"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="clay"][data-mode="dark"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="clay"][data-mode="dark"] #root main[data-page-content="blog"] article,
+:root[data-theme="clay"][data-mode="dark"] #root main[data-page-content="contact"] section > div > div.border {
+  background:rgba(25,27,34,.88) !important;
+  border-color:rgba(255,255,255,.16) !important;
+  box-shadow:0 18px 48px rgba(0,0,0,.28) !important;
+}
+:root[data-theme="brutal"][data-mode="dark"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="brutal"][data-mode="dark"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="brutal"][data-mode="dark"] #root main[data-page-content="blog"] article,
+:root[data-theme="brutal"][data-mode="dark"] #root main[data-page-content="contact"] section > div > div.border {
+  border:2px solid #f7f2e8 !important;
+  box-shadow:6px 6px 0 #f7f2e8 !important;
+}
+:root[data-theme="clay"][data-mode="dark"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="clay"][data-mode="dark"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="clay"][data-mode="dark"] #root main[data-page-content="blog"] article,
+:root[data-theme="clay"][data-mode="dark"] #root main[data-page-content="contact"] section > div > div.border {
+  border-radius:30px !important;
+  box-shadow:10px 10px 24px rgba(0,0,0,.3),-6px -6px 18px rgba(255,255,255,.035) !important;
+}
