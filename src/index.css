@@ -61,3 +61,41 @@ body {
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }
+
+
+:root[data-theme="liquid"] body {
+  background-color: #090c18;
+  background-image: url("./assets/liquid.png");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+:root[data-theme="liquid"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(7, 10, 22, .42) 0%, rgba(7, 10, 22, .68) 52%, rgba(7, 10, 22, .84) 100%);
+}
+:root[data-theme="liquid"] #root {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+:root[data-theme="liquid"] #root section .border {
+  border-color: rgba(205, 224, 255, .22) !important;
+  background-color: rgba(17, 23, 43, .38) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+  backdrop-filter: blur(18px) saturate(145%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .13), 0 12px 40px rgba(0, 0, 0, .12);
+}
+:root[data-theme="liquid"] #root nav {
+  background: rgba(10, 14, 29, .34);
+  border-color: rgba(205, 224, 255, .18);
+}
+:root[data-theme="liquid"] #root section a,
+:root[data-theme="liquid"] #root section button {
+  border-color: rgba(205, 224, 255, .24);
+}
