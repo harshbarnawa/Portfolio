@@ -1,71 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+:root {
+  color-scheme: dark;
+  --studio-bg: #090d12;
+  --studio-fg: #e9f2f5;
+  --studio-accent: #8ce8d4;
+  --studio-surface: rgba(255,255,255,.075);
+  --studio-border: rgba(255,255,255,.16);
+  --studio-radius: 26px;
+  --studio-shadow: 0 18px 55px rgba(0,0,0,.24);
 }
 
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   padding: 0;
-  font-family: Inter, sans-serif;
+  font-family: 'DM Sans', Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--studio-bg);
+  color: var(--studio-fg);
+  transition: background .45s ease, color .45s ease;
 }
-
-/* Page enter animation */
-.page-enter {
-  animation: fadeIn 0.35s ease-out;
+#root > div { background-color: var(--studio-bg) !important; color: var(--studio-fg) !important; }
+#root nav, #root footer { backdrop-filter: blur(24px) saturate(150%); }
+#root .rounded-\[28px\], #root .rounded-\[24px\], #root .rounded-\[20px\], #root .rounded-\[16px\] {
+  border-radius: var(--studio-radius);
+  box-shadow: var(--studio-shadow);
+  transition: border-radius .4s ease, box-shadow .4s ease, background .4s ease, transform .4s ease;
 }
+#root .border { border-color: var(--studio-border); }
+::selection { background: var(--studio-accent); color: #081014; }
+.page-enter { animation: fadeIn .45s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+*:focus-visible { outline: 2px solid var(--studio-accent); outline-offset: 3px; border-radius: 5px; }
+*:focus:not(:focus-visible) { outline: none; }
+@keyframes terminal-blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+.terminal-cursor { animation: terminal-blink 1s step-end infinite; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--studio-fg) 28%, transparent); border-radius: 8px; }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Aurora: deep ink, teal light and translucent panels */
+:root[data-theme="aurora"] {
+  color-scheme: dark; --studio-bg: #080e13; --studio-fg: #e7f4f3; --studio-accent: #86f0d2;
+  --studio-surface: rgba(255,255,255,.075); --studio-border: rgba(174,255,235,.2);
+  --studio-radius: 26px; --studio-shadow: 0 18px 60px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.1);
 }
+:root[data-theme="aurora"] body { background-image: radial-gradient(ellipse at 14% 10%, rgba(34,190,160,.13), transparent 34%), radial-gradient(ellipse at 88% 35%, rgba(70,128,210,.13), transparent 32%); background-attachment: fixed; }
+:root[data-theme="aurora"] #root .rounded-\[28px\], :root[data-theme="aurora"] #root .rounded-\[24px\], :root[data-theme="aurora"] #root .rounded-\[20px\] { backdrop-filter: blur(22px) saturate(150%); }
 
-/* Custom focus ring for keyboard navigation */
-*:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
+/* Liquid glass: luminous edges, fluid highlights and softer pill geometry */
+:root[data-theme="liquid"] { color-scheme: dark; --studio-bg:#090b14; --studio-fg:#f1f0ff; --studio-accent:#a5f4e8; --studio-border:rgba(255,255,255,.27); --studio-radius:34px; --studio-shadow:0 22px 70px rgba(0,0,0,.36), inset 0 1px 1px rgba(255,255,255,.28); }
+:root[data-theme="liquid"] body { background-image: radial-gradient(ellipse at 20% 5%,rgba(48,222,202,.22),transparent 30%),radial-gradient(ellipse at 80% 25%,rgba(255,133,196,.16),transparent 32%),radial-gradient(ellipse at 60% 80%,rgba(94,126,255,.18),transparent 35%); background-attachment:fixed; }
+:root[data-theme="liquid"] #root .rounded-\[28px\], :root[data-theme="liquid"] #root .rounded-\[24px\], :root[data-theme="liquid"] #root .rounded-\[20px\] { background-image:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.025) 48%,rgba(123,220,235,.07)); backdrop-filter:blur(28px) saturate(175%); }
 
-/* Remove focus outline for mouse users */
-*:focus:not(:focus-visible) {
-  outline: none;
-}
+/* Monochrome: crisp, quiet and architectural */
+:root[data-theme="monochrome"] { color-scheme:light; --studio-bg:#f4f4f1; --studio-fg:#171717; --studio-accent:#171717; --studio-border:rgba(0,0,0,.16); --studio-radius:8px; --studio-shadow:0 8px 24px rgba(0,0,0,.045); }
+:root[data-theme="monochrome"] #root .rounded-\[28px\], :root[data-theme="monochrome"] #root .rounded-\[24px\], :root[data-theme="monochrome"] #root .rounded-\[20px\] { box-shadow:none; }
 
-/* Terminal block cursor blink */
-@keyframes terminal-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
+/* Neo-brutalism: paper, ink, saturated punch and offset shadows */
+:root[data-theme="brutal"] { color-scheme:light; --studio-bg:#f7f2e8; --studio-fg:#171717; --studio-accent:#d5ff38; --studio-border:#171717; --studio-radius:5px; --studio-shadow:6px 6px 0 #171717; }
+:root[data-theme="brutal"] #root .rounded-\[28px\], :root[data-theme="brutal"] #root .rounded-\[24px\], :root[data-theme="brutal"] #root .rounded-\[20px\] { border:2px solid #171717; box-shadow:6px 6px 0 #171717; }
+:root[data-theme="brutal"] #root a, :root[data-theme="brutal"] #root button { font-weight:700; }
 
-.terminal-cursor {
-  animation: terminal-blink 1s step-end infinite;
-}
+/* Bento universe: modular dark surfaces */
+:root[data-theme="bento"] { color-scheme:dark; --studio-bg:#0b0d12; --studio-fg:#f4f5f7; --studio-accent:#b9f36b; --studio-border:rgba(255,255,255,.1); --studio-radius:22px; --studio-shadow:0 12px 35px rgba(0,0,0,.22); }
+:root[data-theme="bento"] body { background-image:radial-gradient(circle at 90% 8%,rgba(185,243,107,.09),transparent 24%); }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 6px;
-}
+/* Dark luxury: warm black, champagne and restrained shine */
+:root[data-theme="luxury"] { color-scheme:dark; --studio-bg:#100e0c; --studio-fg:#eee7dc; --studio-accent:#c9a96e; --studio-border:rgba(201,169,110,.24); --studio-radius:14px; --studio-shadow:0 18px 48px rgba(0,0,0,.35); }
+:root[data-theme="luxury"] body { background-image:radial-gradient(ellipse at 50% 0%,rgba(201,169,110,.1),transparent 42%); }
+:root[data-theme="luxury"] #root { font-family:'Playfair Display',Georgia,serif; }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+/* Editorial Swiss: warm stock, strong type and precise lines */
+:root[data-theme="editorial"] { color-scheme:light; --studio-bg:#f1efe8; --studio-fg:#181818; --studio-accent:#e64b32; --studio-border:rgba(0,0,0,.2); --studio-radius:2px; --studio-shadow:none; }
+:root[data-theme="editorial"] #root { font-family:'Space Grotesk',sans-serif; }
+:root[data-theme="editorial"] #root h1, :root[data-theme="editorial"] #root h2 { letter-spacing:-.065em; }
 
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
-}
+/* Clay: warm pastel and inflated soft surfaces */
+:root[data-theme="clay"] { color-scheme:light; --studio-bg:#e9e9f4; --studio-fg:#29283a; --studio-accent:#8b7cf6; --studio-border:rgba(255,255,255,.8); --studio-radius:30px; --studio-shadow:12px 12px 28px rgba(90,89,130,.14),-10px -10px 25px rgba(255,255,255,.82); }
+:root[data-theme="clay"] #root .rounded-\[28px\], :root[data-theme="clay"] #root .rounded-\[24px\], :root[data-theme="clay"] #root .rounded-\[20px\] { border:1px solid rgba(255,255,255,.8); }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+/* Retro futurism: midnight, electric mint and hot coral */
+:root[data-theme="retro"] { color-scheme:dark; --studio-bg:#10101e; --studio-fg:#f8f3ff; --studio-accent:#ff6f91; --studio-border:rgba(80,245,220,.32); --studio-radius:12px; --studio-shadow:0 0 28px rgba(72,245,220,.08); }
+:root[data-theme="retro"] body { background-image:linear-gradient(rgba(80,245,220,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(80,245,220,.035) 1px,transparent 1px); background-size:34px 34px; }
+
+/* Maximalist collage: vivid paper layers and playful geometry */
+:root[data-theme="maximal"] { color-scheme:dark; --studio-bg:#17111c; --studio-fg:#fff5e9; --studio-accent:#ffb84d; --studio-border:rgba(255,184,77,.32); --studio-radius:18px; --studio-shadow:8px 12px 0 rgba(255,91,130,.14); }
+:root[data-theme="maximal"] body { background-image:radial-gradient(circle at 12% 12%,rgba(255,91,130,.15),transparent 24%),radial-gradient(circle at 88% 22%,rgba(255,184,77,.12),transparent 25%),radial-gradient(circle at 70% 85%,rgba(103,211,190,.12),transparent 25%); background-attachment:fixed; }
+
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }
