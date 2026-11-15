@@ -15,9 +15,9 @@ function Navbar() {
         aria-label="Choose portfolio theme"
         value={theme}
         onChange={(event) => setTheme(event.target.value)}
-        className={`max-w-[142px] rounded-full border px-3 py-2 text-[10px] tracking-wide outline-none transition ${isDark ? "border-white/15 bg-white/5 text-white" : "border-black/15 bg-black/5 text-[#222]"}`}
+        className="theme-select max-w-[160px] rounded-full border border-white/20 bg-[#111827] px-3 py-2 text-[10px] tracking-wide text-white outline-none transition"
       >
-        {themes.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
+        {themes.map((item) => <option key={item.id} value={item.id} style={{ backgroundColor: "#111827", color: "#ffffff" }}>{item.name}</option>)}
       </select>
     </label>
   )
