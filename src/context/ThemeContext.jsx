@@ -33,7 +33,8 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     localStorage.setItem("portfolioTheme", theme)
     document.documentElement.dataset.theme = theme
-  }, [theme])
+    document.documentElement.dataset.mode = darkMode ? "dark" : "light"
+  }, [theme, darkMode])
 
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode, theme, setTheme, themes: portfolioThemes }}>
