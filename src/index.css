@@ -291,3 +291,17 @@ body {
   :root[data-theme="brutal"] #root [class*="bg-[#"], :root[data-theme="brutal"] #root article { box-shadow:4px 4px 0 var(--studio-fg); }
   :root[data-theme="maximal"] #root [class*="bg-[#"], :root[data-theme="maximal"] #root article { box-shadow:4px 5px 0 color-mix(in srgb,var(--studio-accent) 22%,transparent); }
 }
+
+/* Preserve theme-driven contrast over the original portfolio's fixed utility colors */
+:root[data-mode="light"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-mode="dark"] #root [class*="text-[#"] { color:var(--studio-fg) !important; }
+:root[data-mode="dark"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-theme="aurora"] #root [class*="text-[#"], :root[data-theme="aurora"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-theme="monochrome"] #root [class*="text-[#"], :root[data-theme="monochrome"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-theme="brutal"] #root [class*="text-[#"], :root[data-theme="brutal"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-theme="bento"] #root [class*="text-[#"], :root[data-theme="bento"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-theme="luxury"] #root [class*="text-[#"], :root[data-theme="luxury"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-theme="editorial"] #root [class*="text-[#"], :root[data-theme="editorial"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-theme="clay"] #root [class*="text-[#"], :root[data-theme="clay"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-theme="retro"] #root [class*="text-[#"], :root[data-theme="retro"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+:root[data-theme="maximal"] #root [class*="text-[#"], :root[data-theme="maximal"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
