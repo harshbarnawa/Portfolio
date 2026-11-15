@@ -87,7 +87,7 @@ body {
 }
 :root[data-theme="liquid"][data-mode="dark"] body {
   background-color:#0c1220;
-  background-image:url("./assets/liquid.png");
+  background-image:url("./assets/dark-liquid.png");
   background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;
