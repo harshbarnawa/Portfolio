@@ -17,27 +17,23 @@ export const portfolioThemes = [
 ]
 
 export function ThemeProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("darkMode")
-    return saved !== null ? JSON.parse(saved) : true
-  })
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem("portfolioTheme")
     return portfolioThemes.some((item) => item.id === saved) ? saved : "aurora"
   })
-
-  useEffect(() => {
-    localStorage.setItem("darkMode", JSON.stringify(darkMode))
-  }, [darkMode])
+  const activeTheme = portfolioThemes.find((item) => item.id === theme) || portfolioThemes[0]
+  const isDark = activeTheme.mode === "dark"
 
   useEffect(() => {
     localStorage.setItem("portfolioTheme", theme)
     document.documentElement.dataset.theme = theme
-    document.documentElement.dataset.mode = darkMode ? "dark" : "light"
-  }, [theme, darkMode])
+    document.documentElement.removeAttribute("data-mode")
+    document.documentElement.style.colorScheme = isDark ? "dark" : "light"
+    localStorage.removeItem("darkMode")
+  }, [theme, isDark])
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode, theme, setTheme, themes: portfolioThemes }}>
+    <ThemeContext.Provider value={{ theme, setTheme, themes: portfolioThemes, isDark }}>
       {children}
     </ThemeContext.Provider>
   )
