@@ -115,3 +115,168 @@ body {
 :root[data-theme="editorial"] #root .rounded-full { border-radius:2px; }
 :root[data-theme="clay"] #root button, :root[data-theme="clay"] #root a { box-shadow:4px 5px 12px rgba(80,75,140,.12); }
 :root[data-theme="retro"] #root a:hover, :root[data-theme="retro"] #root button:hover { text-shadow:0 0 12px var(--studio-accent); }
+
+
+/* Theme studio: page-level composition and component treatments. */
+#root main[data-page-content] > section { position:relative; isolation:isolate; }
+#root main[data-page-content] > section > div { position:relative; z-index:1; }
+#root main[data-page-content] h2 { color:var(--studio-fg); }
+#root main[data-page-content] input,
+#root main[data-page-content] textarea,
+#root main[data-page-content] select { background:var(--studio-surface); border-color:var(--studio-border); color:var(--studio-fg); }
+#root main[data-page-content] input::placeholder,
+#root main[data-page-content] textarea::placeholder { color:color-mix(in srgb,var(--studio-fg) 42%,transparent); }
+#root main[data-page-content] button[type="submit"],
+#root main[data-page-content] a[class*="uppercase"][class*="border"] { border-color:var(--studio-border); }
+#root nav { background:color-mix(in srgb,var(--studio-bg) 78%,transparent); border-color:var(--studio-border); }
+#root footer { background:color-mix(in srgb,var(--studio-bg) 82%,transparent); border-color:var(--studio-border); }
+#root .page-enter { min-height:60vh; }
+
+/* Aurora Glass — atmospheric, layered and quietly luminous. */
+:root[data-theme="aurora"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="aurora"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="aurora"] #root main[data-page-content="blog"] article,
+:root[data-theme="aurora"] #root main[data-page-content="contact"] section > div > div.border {
+  background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.025) 58%,rgba(87,232,202,.055)) !important;
+  border-color:rgba(145,255,224,.24) !important;
+  box-shadow:0 24px 70px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.14);
+  backdrop-filter:blur(24px) saturate(155%);
+}
+:root[data-theme="aurora"] #root main[data-page-content="home"] > section::before {
+  content:""; position:absolute; width:420px; height:420px; top:90px; left:50%; transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(69,221,183,.12),transparent 68%); filter:blur(12px); pointer-events:none;
+}
+
+/* Liquid Glass — reflective glass, liquid highlights and iridescent edges. */
+:root[data-theme="liquid"] #root main[data-page-content] > section::before {
+  content:""; position:absolute; z-index:-1; width:min(76vw,760px); height:460px; top:80px; left:50%; transform:translateX(-50%);
+  border-radius:50%; background:conic-gradient(from 210deg,rgba(76,231,217,.12),rgba(255,255,255,.025),rgba(255,125,196,.13),rgba(117,142,255,.13),rgba(76,231,217,.12));
+  filter:blur(62px); pointer-events:none;
+}
+:root[data-theme="liquid"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="liquid"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="liquid"] #root main[data-page-content="blog"] article,
+:root[data-theme="liquid"] #root main[data-page-content="contact"] section > div > div.border {
+  position:relative; overflow:hidden;
+  background:linear-gradient(135deg,rgba(255,255,255,.19),rgba(255,255,255,.035) 34%,rgba(143,201,255,.075) 68%,rgba(255,255,255,.055)) !important;
+  border:1px solid rgba(255,255,255,.28) !important;
+  box-shadow:0 24px 75px rgba(0,0,0,.34),inset 0 1px 1px rgba(255,255,255,.36),inset 0 -1px rgba(255,255,255,.08);
+  backdrop-filter:blur(30px) saturate(180%);
+}
+:root[data-theme="liquid"] #root main[data-page-content="home"] > section > div:nth-child(2)::before,
+:root[data-theme="liquid"] #root main[data-page-content="projects"] .grid > div::before,
+:root[data-theme="liquid"] #root main[data-page-content="blog"] article::before,
+:root[data-theme="liquid"] #root main[data-page-content="contact"] section > div > div.border::before {
+  content:""; position:absolute; inset:0 0 auto; height:42%; pointer-events:none;
+  background:linear-gradient(165deg,rgba(255,255,255,.17),transparent 70%); opacity:.8;
+}
+:root[data-theme="liquid"] #root main[data-page-content="projects"] .grid > div:hover,
+:root[data-theme="liquid"] #root main[data-page-content="blog"] article:hover { transform:translateY(-6px) scale(1.008); box-shadow:0 32px 90px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.42); }
+:root[data-theme="liquid"] #root nav { border-bottom-color:rgba(255,255,255,.22); box-shadow:0 8px 35px rgba(0,0,0,.12); }
+
+/* Monochrome — editorial grid, fine rules and no decorative shadows. */
+:root[data-theme="monochrome"] #root main[data-page-content] > section { border-top-color:rgba(0,0,0,.24); }
+:root[data-theme="monochrome"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="monochrome"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="monochrome"] #root main[data-page-content="blog"] article,
+:root[data-theme="monochrome"] #root main[data-page-content="contact"] section > div > div.border {
+  background:#fafaf7 !important; border:1px solid #d8d8d2 !important; box-shadow:none !important; border-radius:8px !important;
+}
+:root[data-theme="monochrome"] #root main[data-page-content="projects"] .grid { gap:1.1rem; }
+:root[data-theme="monochrome"] #root main[data-page-content="projects"] .grid > div > a { filter:grayscale(1); }
+:root[data-theme="monochrome"] #root main[data-page-content] h2 { font-family:'Space Grotesk',sans-serif; font-size:clamp(2.8rem,8vw,5.8rem); line-height:.95; letter-spacing:-.075em; text-transform:none; }
+
+/* Neo-Brutalism — hard ink outlines, offset shadows and bold blocks. */
+:root[data-theme="brutal"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="brutal"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="brutal"] #root main[data-page-content="blog"] article,
+:root[data-theme="brutal"] #root main[data-page-content="contact"] section > div > div.border {
+  background:#fffdf6 !important; border:2px solid #171717 !important; border-radius:5px !important;
+  box-shadow:7px 7px 0 #171717 !important;
+}
+:root[data-theme="brutal"] #root main[data-page-content] h2 { font-family:'Space Grotesk',sans-serif; font-size:clamp(3rem,9vw,6rem); font-weight:700; line-height:.88; letter-spacing:-.08em; text-transform:uppercase; }
+:root[data-theme="brutal"] #root main[data-page-content] a,
+:root[data-theme="brutal"] #root main[data-page-content] button { border:2px solid #171717; border-radius:4px !important; box-shadow:3px 3px 0 #171717; }
+:root[data-theme="brutal"] #root main[data-page-content] a:hover,
+:root[data-theme="brutal"] #root main[data-page-content] button:hover { transform:translate(-2px,-2px); box-shadow:5px 5px 0 #171717; }
+
+/* Bento Universe — modular cards with generous breathing room. */
+:root[data-theme="bento"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="bento"] #root main[data-page-content="blog"] article,
+:root[data-theme="bento"] #root main[data-page-content="home"] > section > div:nth-child(2) {
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018)) !important;
+  border-color:rgba(255,255,255,.1) !important; border-radius:24px !important;
+}
+:root[data-theme="bento"] #root main[data-page-content="projects"] .grid > div:nth-child(3n+1) { grid-row:span 1; }
+:root[data-theme="bento"] #root main[data-page-content="projects"] .grid { gap:1.2rem; }
+:root[data-theme="bento"] #root main[data-page-content="home"] > section > div:nth-child(2) { box-shadow:0 28px 80px rgba(0,0,0,.3),inset 0 1px rgba(255,255,255,.08); }
+
+/* Dark Luxury — restrained champagne accents and elegant typography. */
+:root[data-theme="luxury"] #root main[data-page-content] { font-family:'DM Sans',sans-serif; }
+:root[data-theme="luxury"] #root main[data-page-content] h2 { font-family:'Playfair Display',serif; font-size:clamp(2.7rem,7vw,5rem); font-weight:500; letter-spacing:-.045em; text-transform:none; }
+:root[data-theme="luxury"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="luxury"] #root main[data-page-content="blog"] article,
+:root[data-theme="luxury"] #root main[data-page-content="home"] > section > div:nth-child(2) {
+  background:linear-gradient(145deg,rgba(201,169,110,.09),rgba(255,255,255,.018)) !important;
+  border-color:rgba(201,169,110,.27) !important; box-shadow:0 20px 65px rgba(0,0,0,.38);
+}
+
+/* Editorial Swiss — asymmetry, oversized headlines, red signal accents. */
+:root[data-theme="editorial"] #root main[data-page-content] h2 { font-family:'Space Grotesk',sans-serif; font-size:clamp(3.5rem,10vw,7rem); line-height:.84; letter-spacing:-.09em; text-transform:none; }
+:root[data-theme="editorial"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="editorial"] #root main[data-page-content="blog"] article,
+:root[data-theme="editorial"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="editorial"] #root main[data-page-content="contact"] section > div > div.border {
+  background:#f8f6ef !important; border:0 !important; border-top:2px solid #181818 !important; border-radius:0 !important; box-shadow:none !important;
+}
+:root[data-theme="editorial"] #root main[data-page-content="projects"] .grid { gap:2.5rem 1.5rem; }
+:root[data-theme="editorial"] #root main[data-page-content="projects"] .grid > div:nth-child(even) { transform:translateY(34px); }
+:root[data-theme="editorial"] #root main[data-page-content="projects"] .grid > div:nth-child(even):hover { transform:translateY(28px); }
+:root[data-theme="editorial"] #root main[data-page-content] a:hover { color:#e64b32 !important; }
+
+/* Claymorphism — soft pastel surfaces, inflated controls and rounded cards. */
+:root[data-theme="clay"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="clay"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="clay"] #root main[data-page-content="blog"] article,
+:root[data-theme="clay"] #root main[data-page-content="contact"] section > div > div.border {
+  background:linear-gradient(145deg,#f4f3ff,#e3e3f1) !important; border:1px solid rgba(255,255,255,.95) !important;
+  border-radius:30px !important; box-shadow:12px 12px 26px rgba(112,108,160,.16),-10px -10px 24px rgba(255,255,255,.9) !important;
+}
+:root[data-theme="clay"] #root main[data-page-content] input,
+:root[data-theme="clay"] #root main[data-page-content] textarea { background:rgba(218,218,236,.5); border-radius:18px; box-shadow:inset 4px 4px 8px rgba(110,108,150,.1),inset -3px -3px 8px rgba(255,255,255,.9); }
+:root[data-theme="clay"] #root main[data-page-content] h2 { color:#36334e; font-weight:700; letter-spacing:-.06em; }
+
+/* Retro Futurism — grid floor, neon edges and terminal-inspired details. */
+:root[data-theme="retro"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="retro"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="retro"] #root main[data-page-content="blog"] article,
+:root[data-theme="retro"] #root main[data-page-content="contact"] section > div > div.border {
+  background:rgba(15,17,34,.88) !important; border:1px solid rgba(80,245,220,.36) !important;
+  box-shadow:0 0 0 1px rgba(80,245,220,.08),0 0 32px rgba(80,245,220,.08),inset 0 0 28px rgba(80,245,220,.025);
+}
+:root[data-theme="retro"] #root main[data-page-content] h2 { font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:-.06em; text-shadow:0 0 24px rgba(80,245,220,.2); }
+:root[data-theme="retro"] #root main[data-page-content] a:hover { color:#50f5dc !important; }
+
+/* Maximalist Collage — layered color, playful tilt and expressive type. */
+:root[data-theme="maximal"] #root main[data-page-content="home"] > section > div:nth-child(2),
+:root[data-theme="maximal"] #root main[data-page-content="projects"] .grid > div,
+:root[data-theme="maximal"] #root main[data-page-content="blog"] article,
+:root[data-theme="maximal"] #root main[data-page-content="contact"] section > div > div.border {
+  background:linear-gradient(145deg,rgba(255,184,77,.1),rgba(255,91,130,.055) 52%,rgba(103,211,190,.055)) !important;
+  border:1px solid rgba(255,184,77,.32) !important; box-shadow:8px 10px 0 rgba(255,91,130,.12),0 24px 60px rgba(0,0,0,.22);
+}
+:root[data-theme="maximal"] #root main[data-page-content] h2 { font-family:'Space Grotesk',sans-serif; font-size:clamp(3rem,8vw,5.6rem); font-weight:700; letter-spacing:-.08em; }
+:root[data-theme="maximal"] #root main[data-page-content="projects"] .grid > div:nth-child(odd) { transform:rotate(-.6deg); }
+:root[data-theme="maximal"] #root main[data-page-content="projects"] .grid > div:nth-child(even) { transform:rotate(.7deg); }
+:root[data-theme="maximal"] #root main[data-page-content="projects"] .grid > div:hover { transform:translateY(-7px) rotate(0); }
+
+/* Small-screen refinements for every visual system. */
+@media (max-width:767px) {
+  #root main[data-page-content] > section > div { padding-top:7.5rem; }
+  #root main[data-page-content="home"] > section { padding-top:0; }
+  :root[data-theme="editorial"] #root main[data-page-content="projects"] .grid > div:nth-child(even),
+  :root[data-theme="maximal"] #root main[data-page-content="projects"] .grid > div:nth-child(n) { transform:none; }
+  :root[data-theme="brutal"] #root main[data-page-content="home"] > section > div:nth-child(2),
+  :root[data-theme="brutal"] #root main[data-page-content="projects"] .grid > div { box-shadow:4px 4px 0 #171717 !important; }
+  :root[data-theme="liquid"] #root main[data-page-content] > section::before { width:100vw; height:320px; filter:blur(42px); }
+}
