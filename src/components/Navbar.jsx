@@ -14,7 +14,7 @@ function Navbar() {
       <select
         aria-label="Choose portfolio theme"
         value={theme}
-        onChange={(event) => setTheme(event.target.value)}
+        onChange={(event) => { const next = themes.find((item) => item.id === event.target.value); setTheme(event.target.value); if (next) setDarkMode(next.mode === "dark") }}
         className={`max-w-[132px] rounded-full border px-3 py-2 text-[10px] tracking-wide outline-none transition ${darkMode ? "border-white/15 bg-white/5 text-white" : "border-black/15 bg-black/5 text-[#222]"}`}
       >
         {themes.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
