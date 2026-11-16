@@ -79,7 +79,7 @@ body {
 /* Liquid glass artwork and glossy, pearl-edged surfaces */
 :root[data-theme="liquid"][data-mode="light"] body {
   background-color:#eaf3fa;
-  background-image:url("/assets/backgrounds/light-liquid.webp");
+  background-image:url("/assets/backgrounds/light-liquid-v1.webp");
   background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;
@@ -87,7 +87,7 @@ body {
 }
 :root[data-theme="liquid"][data-mode="dark"] body {
   background-color:#0c1220;
-  background-image:url("/assets/backgrounds/dark-liquid.webp");
+  background-image:url("/assets/backgrounds/dark-liquid-v1.webp");
   background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;
@@ -156,25 +156,25 @@ body {
 
 
 /* Theme artwork: each mode uses its own generated full-scene image */
-:root[data-theme="aurora"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-aurora.webp"); }
-:root[data-theme="aurora"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-aurora.webp"); }
-:root[data-theme="monochrome"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-monochrome.webp"); }
-:root[data-theme="monochrome"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-monochrome.webp"); }
-:root[data-theme="brutal"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-Neo-Brutalism.webp"); }
-:root[data-theme="brutal"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-Neo-Brutalism.webp"); }
-:root[data-theme="bento"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-bento-universe.webp"); }
-:root[data-theme="bento"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-bento-universe.webp"); }
-:root[data-theme="luxury"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-dark-luxury.webp"); }
-:root[data-theme="luxury"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-dark-luxury.webp"); }
-:root[data-theme="editorial"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-editorial-swiss.webp"); }
-:root[data-theme="editorial"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-editorial-swiss.webp"); }
-:root[data-theme="clay"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-clay-morphism.webp"); }
-:root[data-theme="clay"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-clay-morphism.webp"); }
-:root[data-theme="retro"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-retro-futurism.webp"); }
-:root[data-theme="retro"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-retro-futurism.webp"); }
-:root[data-theme="maximal"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-maximalist-collage.webp"); }
-:root[data-theme="maximal"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-maximalist-collage.webp"); }
-:root[data-theme="liquid"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-liquid.webp"); }
+:root[data-theme="aurora"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-aurora-v1.webp"); }
+:root[data-theme="aurora"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-aurora-v1.webp"); }
+:root[data-theme="monochrome"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-monochrome-v1.webp"); }
+:root[data-theme="monochrome"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-monochrome-v1.webp"); }
+:root[data-theme="brutal"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-Neo-Brutalism-v1.webp"); }
+:root[data-theme="brutal"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-Neo-Brutalism-v1.webp"); }
+:root[data-theme="bento"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-bento-universe-v1.webp"); }
+:root[data-theme="bento"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-bento-universe-v1.webp"); }
+:root[data-theme="luxury"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-dark-luxury-v1.webp"); }
+:root[data-theme="luxury"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-dark-luxury-v1.webp"); }
+:root[data-theme="editorial"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-editorial-swiss-v1.webp"); }
+:root[data-theme="editorial"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-editorial-swiss-v1.webp"); }
+:root[data-theme="clay"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-clay-morphism-v1.webp"); }
+:root[data-theme="clay"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-clay-morphism-v1.webp"); }
+:root[data-theme="retro"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-retro-futurism-v1.webp"); }
+:root[data-theme="retro"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-retro-futurism-v1.webp"); }
+:root[data-theme="maximal"][data-mode="light"] body { background-image:url("/assets/backgrounds/light-maximalist-collage-v1.webp"); }
+:root[data-theme="maximal"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-maximalist-collage-v1.webp"); }
+:root[data-theme="liquid"][data-mode="dark"] body { background-image:url("/assets/backgrounds/dark-liquid-v1.webp"); }
 
 body {
   background-position:center top;
