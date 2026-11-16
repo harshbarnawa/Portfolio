@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, readdirSync } from "node:fs"
+import { existsSync, mkdirSync, readdirSync, statSync } from "node:fs"
 import { spawnSync } from "node:child_process"
 import { join } from "node:path"
 
@@ -51,4 +51,9 @@ for (const { format, quality } of formats) {
   if (result.status !== 0) process.exit(result.status ?? 1)
 }
 
-process.stdout.write(`Optimized ${files.length} theme backgrounds into WebP.\n`)
+const sourceBytes = files.reduce((total, file) => total + statSync(join(sourceDir, file)).size, 0)
+const outputBytes = files.reduce((total, file) => total + statSync(join(outputDir, file.replace(/\\.png$/i, ".webp"))).size, 0)
+const savedPercent = Math.round((1 - outputBytes / sourceBytes) * 100)
+const formatMB = (bytes) => `${(bytes / 1024 / 1024).toFixed(1)} MB`
+
+process.stdout.write(`Optimized ${files.length} backgrounds: ${formatMB(sourceBytes)} PNG → ${formatMB(outputBytes)} WebP (${savedPercent}% smaller).\\n`)
