@@ -3,6 +3,19 @@ import { createContext, useContext, useEffect, useState } from "react"
 
 const ThemeContext = createContext(null)
 
+const backgroundNames = {
+  aurora: "aurora",
+  liquid: "liquid",
+  monochrome: "monochrome",
+  brutal: "Neo-Brutalism",
+  bento: "bento-universe",
+  luxury: "dark-luxury",
+  editorial: "editorial-swiss",
+  clay: "clay-morphism",
+  retro: "retro-futurism",
+  maximal: "maximalist-collage",
+}
+
 export const portfolioThemes = [
   { id: "aurora", name: "Aurora Glass" },
   { id: "liquid", name: "Liquid Glass" },
@@ -33,6 +46,25 @@ export function ThemeProvider({ children }) {
     document.documentElement.dataset.theme = theme
     document.documentElement.dataset.mode = mode
     document.documentElement.style.colorScheme = mode
+    document.documentElement.dataset.backgroundLoaded = "false"
+
+    const image = new Image()
+    image.decoding = "async"
+    image.fetchPriority = "high"
+    image.onload = () => {
+      image.decode().catch(() => {}).finally(() => {
+        document.documentElement.dataset.backgroundLoaded = "true"
+      })
+    }
+    image.src = `/assets/backgrounds/${mode}-${backgroundNames[theme]}-v1.webp`
+
+    if (image.complete && image.naturalWidth > 0) {
+      document.documentElement.dataset.backgroundLoaded = "true"
+    }
+
+    return () => {
+      image.onload = null
+    }
   }, [theme, mode])
 
   return (
