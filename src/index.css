@@ -305,3 +305,22 @@ body {
 :root[data-theme="clay"] #root [class*="text-[#"], :root[data-theme="clay"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
 :root[data-theme="retro"] #root [class*="text-[#"], :root[data-theme="retro"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
 :root[data-theme="maximal"] #root [class*="text-[#"], :root[data-theme="maximal"] #root [class*="text-white"] { color:var(--studio-fg) !important; }
+
+
+.theme-bg-preview {
+  position:fixed;
+  inset:-18px;
+  z-index:-2;
+  pointer-events:none;
+  background-position:center top;
+  background-size:cover;
+  background-repeat:no-repeat;
+  filter:blur(18px);
+  transform:scale(1.04);
+  opacity:1;
+  transition:opacity .55s ease;
+}
+html[data-background-loaded="true"] .theme-bg-preview { opacity:0; }
+@media (prefers-reduced-motion:reduce) {
+  .theme-bg-preview { transition:none; }
+}
