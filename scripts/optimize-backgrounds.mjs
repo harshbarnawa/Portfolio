@@ -51,4 +51,4 @@ for (const { format, quality } of formats) {
   if (result.status !== 0) process.exit(result.status ?? 1)
 }
 
-process.stdout.write(`Optimized ${files.length} theme backgrounds into AVIF and WebP.\n`)
+process.stdout.write(`Optimized ${files.length} theme backgrounds into WebP.\n`)
