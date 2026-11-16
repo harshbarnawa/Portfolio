@@ -38,6 +38,36 @@
 
     <!-- Preconnect for external resources -->
     <link rel="preconnect" href="https://ghchart.rshah.org" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script>
+      (() => {
+        try {
+          const themeNames = {
+            aurora: "aurora",
+            liquid: "liquid",
+            monochrome: "monochrome",
+            brutal: "Neo-Brutalism",
+            bento: "bento-universe",
+            luxury: "dark-luxury",
+            editorial: "editorial-swiss",
+            clay: "clay-morphism",
+            retro: "retro-futurism",
+            maximal: "maximalist-collage"
+          };
+          const savedTheme = localStorage.getItem("portfolioTheme");
+          const theme = themeNames[savedTheme] || "aurora";
+          const mode = localStorage.getItem("portfolioMode") === "dark" ? "dark" : "light";
+          const preload = document.createElement("link");
+          preload.rel = "preload";
+          preload.as = "image";
+          preload.fetchPriority = "high";
+          preload.href = `/assets/backgrounds/${mode}-${theme}-v1.webp`;
+          document.head.appendChild(preload);
+        } catch {}
+      })();
+    </script>
 
     <!-- Theme color -->
     <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />

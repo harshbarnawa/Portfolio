@@ -13,7 +13,7 @@ function fmtDate(d) {
 }
 
 function ContributionGraph() {
-  const { darkMode } = useTheme()
+  const { isDark: darkMode } = useTheme()
   const [weeks, setWeeks] = useState([])
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)

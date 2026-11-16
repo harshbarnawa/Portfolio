@@ -1,20 +1,58 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState, useEffect } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 
-const ThemeContext = createContext()
+const ThemeContext = createContext(null)
+
+export const themeBackgroundNames = {
+  aurora: "aurora",
+  liquid: "liquid",
+  monochrome: "monochrome",
+  brutal: "Neo-Brutalism",
+  bento: "bento-universe",
+  luxury: "dark-luxury",
+  editorial: "editorial-swiss",
+  clay: "clay-morphism",
+  retro: "retro-futurism",
+  maximal: "maximalist-collage",
+}
+
+export const portfolioThemes = [
+  { id: "aurora", name: "Aurora Glass" },
+  { id: "liquid", name: "Liquid Glass" },
+  { id: "monochrome", name: "Monochrome" },
+  { id: "brutal", name: "Neo-Brutalism" },
+  { id: "bento", name: "Bento Universe" },
+  { id: "luxury", name: "Dark Luxury" },
+  { id: "editorial", name: "Editorial Swiss" },
+  { id: "clay", name: "Claymorphism" },
+  { id: "retro", name: "Retro Futurism" },
+  { id: "maximal", name: "Maximalist Collage" },
+]
 
 export function ThemeProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("darkMode")
-    return saved !== null ? JSON.parse(saved) : true
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem("portfolioTheme")
+    return portfolioThemes.some((item) => item.id === saved) ? saved : "aurora"
   })
+  const [mode, setMode] = useState(() => {
+    const saved = localStorage.getItem("portfolioMode")
+    return saved === "dark" ? "dark" : "light"
+  })
+  const isDark = mode === "dark"
 
   useEffect(() => {
-    localStorage.setItem("darkMode", JSON.stringify(darkMode))
-  }, [darkMode])
+    localStorage.setItem("portfolioTheme", theme)
+    localStorage.setItem("portfolioMode", mode)
+    document.documentElement.dataset.theme = theme
+    document.documentElement.dataset.mode = mode
+    document.documentElement.style.colorScheme = mode
+    const image = new Image()
+    image.fetchPriority = "high"
+    image.src = `/assets/backgrounds/${mode}-${themeBackgroundNames[theme]}-v1.webp`
+  }, [theme, mode])
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+    <ThemeContext.Provider value={{ theme, setTheme, themes: portfolioThemes, mode, setMode, isDark }}>
       {children}
     </ThemeContext.Provider>
   )
@@ -22,8 +60,6 @@ export function ThemeProvider({ children }) {
  
 export function useTheme() {
   const context = useContext(ThemeContext)
-  if (!context) {
-    throw new Error("useTheme must be used within a ThemeProvider")
-  }
+  if (!context) throw new Error("useTheme must be used within a ThemeProvider")
   return context
 }

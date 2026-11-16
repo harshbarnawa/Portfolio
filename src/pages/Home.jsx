@@ -6,7 +6,7 @@ import { useTheme } from "../context/ThemeContext"
 import { SkillsData, ExploringData, Quotes } from "../constants/skills"
 
 function Home() {
-  const { darkMode } = useTheme()
+  const { isDark: darkMode } = useTheme()
   const [terminalOpen, setTerminalOpen] = useState(false)
   const [input, setInput] = useState("")
   const [history, setHistory] = useState([])
