@@ -7,17 +7,15 @@ const outputDir = "public/assets/backgrounds"
 const files = readdirSync(sourceDir)
   .filter((file) => /^(light|dark)-.+\.png$/i.test(file))
   .sort()
+const formats = [{ format: "webp", quality: 82 }]
+const outputName = (file, format) => file.replace(".png", `.${format}`)
 
 if (!files.length) throw new Error("No theme background PNGs found")
 
 mkdirSync(outputDir, { recursive: true })
 
-const formats = [
-  { format: "webp", quality: 82 },
-]
-
 const outputsExist = formats.every(({ format }) =>
-  files.every((file) => existsSync(join(outputDir, file.replace(/\.png$/i, `.${format}`))))
+  files.every((file) => existsSync(join(outputDir, outputName(file, format))))
 )
 
 if (outputsExist) {
@@ -52,7 +50,7 @@ for (const { format, quality } of formats) {
 }
 
 const sourceBytes = files.reduce((total, file) => total + statSync(join(sourceDir, file)).size, 0)
-const outputBytes = files.reduce((total, file) => total + statSync(join(outputDir, file.replace(/\.png$/i, ".webp"))).size, 0)
+const outputBytes = files.reduce((total, file) => total + statSync(join(outputDir, outputName(file, "webp"))).size, 0)
 const savedPercent = Math.round((1 - outputBytes / sourceBytes) * 100)
 const formatMB = (bytes) => `${(bytes / 1024 / 1024).toFixed(1)} MB`
 
