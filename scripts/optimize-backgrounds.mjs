@@ -52,8 +52,8 @@ for (const { format, quality } of formats) {
 }
 
 const sourceBytes = files.reduce((total, file) => total + statSync(join(sourceDir, file)).size, 0)
-const outputBytes = files.reduce((total, file) => total + statSync(join(outputDir, file.replace(/\\.png$/i, ".webp"))).size, 0)
+const outputBytes = files.reduce((total, file) => total + statSync(join(outputDir, file.replace(/\.png$/i, ".webp"))).size, 0)
 const savedPercent = Math.round((1 - outputBytes / sourceBytes) * 100)
 const formatMB = (bytes) => `${(bytes / 1024 / 1024).toFixed(1)} MB`
 
-process.stdout.write(`Optimized ${files.length} backgrounds: ${formatMB(sourceBytes)} PNG → ${formatMB(outputBytes)} WebP (${savedPercent}% smaller).\\n`)
+process.stdout.write(`Optimized ${files.length} backgrounds: ${formatMB(sourceBytes)} PNG → ${formatMB(outputBytes)} WebP (${savedPercent}% smaller).\n`)
