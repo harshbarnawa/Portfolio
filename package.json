@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sync:twitter": "node scripts/sync-twitter.js"
+    "sync:twitter": "node scripts/sync-twitter.js",
+    "predev": "node scripts/optimize-backgrounds.mjs",
+    "prebuild": "node scripts/optimize-backgrounds.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
