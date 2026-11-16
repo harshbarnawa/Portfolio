@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from "react"
 
 const ThemeContext = createContext(null)
 
-const backgroundNames = {
+export const themeBackgroundNames = {
   aurora: "aurora",
   liquid: "liquid",
   monochrome: "monochrome",
@@ -56,7 +56,7 @@ export function ThemeProvider({ children }) {
         document.documentElement.dataset.backgroundLoaded = "true"
       })
     }
-    image.src = `/assets/backgrounds/${mode}-${backgroundNames[theme]}-v1.webp`
+    image.src = `/assets/backgrounds/${mode}-${themeBackgroundNames[theme]}-v1.webp`
 
     if (image.complete && image.naturalWidth > 0) {
       document.documentElement.dataset.backgroundLoaded = "true"
