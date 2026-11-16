@@ -13,7 +13,6 @@ if (!files.length) throw new Error("No theme background PNGs found")
 mkdirSync(outputDir, { recursive: true })
 
 const formats = [
-  { format: "avif", quality: 58 },
   { format: "webp", quality: 82 },
 ]
 
