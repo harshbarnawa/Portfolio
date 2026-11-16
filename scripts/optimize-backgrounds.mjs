@@ -8,7 +8,7 @@ const files = readdirSync(sourceDir)
   .filter((file) => /^(light|dark)-.+\.png$/i.test(file))
   .sort()
 const formats = [{ format: "webp", quality: 82 }]
-const outputName = (file, format) => file.replace(".png", `.${format}`)
+const outputName = (file, format) => file.replace(".png", `-v1.${format}`)
 
 if (!files.length) throw new Error("No theme background PNGs found")
 
@@ -36,7 +36,7 @@ for (const { format, quality } of formats) {
       "--input",
       ...files.map((file) => join(sourceDir, file)),
       "--output",
-      `${outputDir}/{name}.${format}`,
+      `${outputDir}/{name}-v1.${format}`,
       "--format",
       format,
       "--quality",
