@@ -41,10 +41,10 @@ function Home() {
         setInput("")
         return
       } else if (lower === "github") {
-        window.open("https://github.com/harshbarnawa", "_blank")
+        window.open("https://github.com/harshbarnawa", "_blank", "noopener,noreferrer")
         output = "opening github..."
       } else if (lower === "linkedin") {
-        window.open("https://linkedin.com", "_blank")
+        window.open("https://linkedin.com/in/harsh-barnawa", "_blank", "noopener,noreferrer")
         output = "opening linkedin..."
       } else if (lower === "blog") {
         window.location.href = "/blog"
@@ -59,13 +59,13 @@ function Home() {
         window.location.href = "/contact"
         output = "navigating to contact..."
       } else if (lower === "resume") {
-        window.open("/assets/Resume.pdf", "_blank")
+        window.open("/assets/Resume.pdf", "_blank", "noopener,noreferrer")
         output = "opening resume..."
       } else if (lower === "home") {
         window.location.href = "/"
         output = "already on home."
       } else if (lower === "whoami") {
-        output = "harsh — a developer who overthings small details."
+        output = "harsh — a developer who overthinks small details."
       } else if (lower === "date") {
         output = new Date().toLocaleString()
       } else if (lower === "quote") {
@@ -243,7 +243,7 @@ function Home() {
         {/* Terminal button */}
         <div
           onClick={() => setTerminalOpen(true)}
-          onKeyDown={(e) => e.key === "Enter" && setTerminalOpen(true)}
+          onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && (e.preventDefault(), setTerminalOpen(true))}
           role="button"
           tabIndex={0}
           aria-label="Open terminal"
@@ -296,7 +296,7 @@ function Home() {
               src="/me.jpeg"
               alt="Harsh Barnawa profile photo"
               className="w-[52px] h-[52px] object-cover rounded-2xl"
-              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -305,10 +305,7 @@ function Home() {
               darkMode ? "text-[#cfcfcf]" : "text-[#4a4a4a]"
             }`}
           >
-            I like building clean things and overthinking small details that
-            probably don't matter that much. mostly building random projects,
-            solving cpp problems and rebuilding things again because "something
-            still feels off"
+            I build full-stack applications and backend systems, with a focus on turning ideas into reliable products. Currently building Board N Byte, exploring applied AI, and sharpening my problem-solving skills.
           </p>
 
           {/* Mini quick stats */}
