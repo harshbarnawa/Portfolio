@@ -51,7 +51,7 @@ function Contact() {
 
           {/* Contact form */}
           <div
-            className={`border rounded-[24px] p-6 md:p-8 mb-10 ${
+            className={`design-surface border rounded-[24px] p-6 md:p-8 mb-10 ${
               darkMode
                 ? "border-[#262626] bg-[#151515]/70"
                 : "border-[#d8d8d8] bg-[#efefef]/70"
