@@ -278,7 +278,7 @@ function Home() {
 
         {/* Profile card */}
         <div
-          className={`design-surface border rounded-[28px] p-8 md:p-10 transition ${
+          className={`hero-card design-surface border rounded-[28px] p-8 md:p-10 transition ${
             darkMode
               ? "border-[#262626] bg-[#151515]/70"
               : "border-[#d8d8d8] bg-[#efefef]/70"
@@ -301,7 +301,7 @@ function Home() {
           </div>
 
           <p
-            className={`font-serif italic text-[15px] md:text-[17px] leading-[2] tracking-[-0.01em] ${
+            className={`hero-intro font-serif italic text-[15px] md:text-[17px] leading-[2] tracking-[-0.01em] ${
               darkMode ? "text-[#cfcfcf]" : "text-[#4a4a4a]"
             }`}
           >
@@ -309,18 +309,18 @@ function Home() {
           </p>
 
           {/* Mini quick stats */}
-          <div className="flex items-center justify-start gap-5 mt-6">
+          <div className="hero-stats grid grid-cols-3 gap-3 mt-8">
             {quickStats.map((stat) => (
-              <div key={stat.label} className="flex items-baseline gap-1.5">
+              <div key={stat.label} className="hero-stat flex flex-col gap-1 min-w-0">
                 <span
-                  className={`text-[15px] font-medium tracking-[-0.03em] ${
+                  className={`hero-stat-value text-[15px] font-medium tracking-[-0.03em] ${
                     darkMode ? "text-white" : "text-[#222]"
                   }`}
                 >
                   {stat.value}
                 </span>
                 <span
-                  className={`text-[8px] uppercase tracking-[2px] ${
+                  className={`hero-stat-label text-[8px] uppercase tracking-[2px] ${
                     darkMode ? "text-[#7a7a7a]" : "text-[#8a8a8a]"
                   }`}
                 >
@@ -331,7 +331,7 @@ function Home() {
           </div>
 
           {/* inline buttons — right side */}
-          <div className="flex items-center justify-end gap-2.5 mt-6">
+          <div className="hero-actions flex flex-wrap items-center justify-end gap-2.5 mt-8">
             <a
               href="/assets/Resume.pdf"
               target="_blank"
@@ -371,7 +371,7 @@ function Home() {
               href="https://codeforces.com/profile/harshbarnawa.info"
               target="_blank"
               rel="noreferrer"
-              className={`px-4 py-2 rounded-full text-[13px] border transition ${
+              className={`design-action px-4 py-2 rounded-full text-[13px] border transition ${
                 darkMode
                   ? "border-[#303030] bg-[#161616] text-[#cfcfcf] hover:bg-[#202020]"
                   : "border-[#d5d5d5] bg-white text-[#444] hover:bg-gray-50"
@@ -415,7 +415,7 @@ function Home() {
 
         {/* Interactive contribution graph */}
         <div
-          className={`border rounded-[20px] p-5 mb-10 ${
+          className={`design-surface border rounded-[20px] p-5 mb-10 ${
             darkMode
               ? "border-[#262626] bg-[#151515]/70"
               : "border-[#d8d8d8] bg-[#efefef]/70"
@@ -483,7 +483,7 @@ function Home() {
         {/* Click here to see more work */}
         <a
           href="/projects"
-          className={`block w-full text-center border rounded-[16px] px-5 py-4 text-[13px] transition duration-300 ${
+          className={`design-action block w-full text-center border rounded-[16px] px-5 py-4 text-[13px] transition duration-300 ${
             darkMode
               ? "border-[#2b2b2b] bg-[#171717]/70 text-[#a1a1a1] hover:bg-[#202020] hover:text-white"
               : "border-[#d4d4d4] bg-[#f2f2f2]/70 text-[#666] hover:bg-[#e8e8e8] hover:text-[#333]"
