@@ -4,7 +4,7 @@ import { useTheme } from "../context/ThemeContext"
 import { SocialLinks } from "../constants/social"
 
 function Contact() {
-  const { darkMode } = useTheme()
+  const { isDark: darkMode } = useTheme()
 
   return (
     <Layout>
