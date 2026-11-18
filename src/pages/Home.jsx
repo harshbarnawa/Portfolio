@@ -143,7 +143,7 @@ function Home() {
       {terminalOpen && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 backdrop-blur-sm px-5">
           <div
-            className={`w-full max-w-4xl rounded-[24px] overflow-hidden border ${
+            className={`design-surface w-full max-w-4xl rounded-[24px] overflow-hidden border ${
               darkMode
                 ? "border-[#2a2a2a] bg-[#111]"
                 : "border-[#d8d8d8] bg-[#f5f5f5]"
@@ -247,7 +247,7 @@ function Home() {
           role="button"
           tabIndex={0}
           aria-label="Open terminal"
-          className={`mb-8 flex items-center justify-between rounded-[16px] border px-4 py-3 cursor-pointer transition-all duration-300 ${
+          className={`design-action mb-8 flex items-center justify-between rounded-[16px] border px-4 py-3 cursor-pointer transition-all duration-300 ${
             darkMode
               ? "border-[#262626] bg-[#141414] hover:bg-[#181818]"
               : "border-[#d8d8d8] bg-[#f3f3f3] hover:bg-[#ececec]"
@@ -278,7 +278,7 @@ function Home() {
 
         {/* Profile card */}
         <div
-          className={`border rounded-[28px] p-8 md:p-10 transition ${
+          className={`design-surface border rounded-[28px] p-8 md:p-10 transition ${
             darkMode
               ? "border-[#262626] bg-[#151515]/70"
               : "border-[#d8d8d8] bg-[#efefef]/70"
@@ -336,7 +336,7 @@ function Home() {
               href="/assets/Resume.pdf"
               target="_blank"
               rel="noreferrer"
-              className={`px-4 py-2 rounded-[16px] text-[11px] uppercase tracking-[2px] border transition duration-300 flex items-center gap-1.5 ${
+              className={`design-action px-4 py-2 rounded-[16px] text-[11px] uppercase tracking-[2px] border transition duration-300 flex items-center gap-1.5 ${
                 darkMode
                   ? "border-[#333] bg-[#1a1a1a] text-[#cfcfcf] hover:bg-[#252525]"
                   : "border-[#ccc] bg-[#e8e8e8] text-[#555] hover:bg-[#ddd]"
@@ -346,7 +346,7 @@ function Home() {
             </a>
             <a
               href="/contact"
-              className={`px-4 py-2 rounded-[16px] text-[11px] uppercase tracking-[2px] border transition duration-300 flex items-center gap-1.5 ${
+              className={`design-action px-4 py-2 rounded-[16px] text-[11px] uppercase tracking-[2px] border transition duration-300 flex items-center gap-1.5 ${
                 darkMode
                   ? "border-[#333] bg-[#1a1a1a] text-[#cfcfcf] hover:bg-[#252525]"
                   : "border-[#ccc] bg-[#e8e8e8] text-[#555] hover:bg-[#ddd]"
