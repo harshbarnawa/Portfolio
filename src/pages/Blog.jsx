@@ -6,7 +6,7 @@ import blogData from "../data/posts.json"
 const X_PROFILE_URL = blogData.source || "https://x.com/harshbarnawa"
 
 function Blog() {
-  const { darkMode } = useTheme()
+  const { isDark: darkMode } = useTheme()
   const posts = (blogData.posts || []).slice(0, 5)
 
   return (
