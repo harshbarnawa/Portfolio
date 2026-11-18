@@ -3,7 +3,7 @@ import { useTheme } from "../context/ThemeContext"
 import { ProjectsData } from "../constants/projects"
 
 function Projects() {
-  const { darkMode } = useTheme()
+  const { isDark: darkMode } = useTheme()
 
   return (
     <Layout>
