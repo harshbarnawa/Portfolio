@@ -14,7 +14,7 @@ import { useTheme } from "../context/ThemeContext"
 const WEB3FORMS_ACCESS_KEY = "74ea7ac2-2269-40f3-beb4-e3fb31b3e726"
 
 function ContactForm() {
-  const { darkMode } = useTheme()
+  const { isDark: darkMode } = useTheme()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -94,7 +94,7 @@ function ContactForm() {
   }
 
   const inputClass = (field) =>
-    `w-full bg-transparent border rounded-[12px] px-4 py-3 text-[14px] outline-none transition duration-200 ${
+    `design-action w-full bg-transparent border rounded-[12px] px-4 py-3 text-[14px] outline-none transition duration-200 ${
       errors[field]
         ? "border-[#ff5f57]"
         : darkMode
@@ -196,7 +196,7 @@ function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className={`px-6 py-3 rounded-[12px] text-[13px] uppercase tracking-[2px] transition duration-300 border ${
+        className={`design-action px-6 py-3 rounded-[12px] text-[13px] uppercase tracking-[2px] transition duration-300 border ${
           darkMode
             ? "border-[#333] bg-[#1a1a1a] text-[#cfcfcf] hover:bg-[#252525]"
             : "border-[#ccc] bg-[#e8e8e8] text-[#444] hover:bg-[#ddd]"

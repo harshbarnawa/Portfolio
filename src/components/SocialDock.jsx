@@ -13,7 +13,7 @@ function SocialDock() {
           target={link.startsWith("mailto") ? undefined : "_blank"}
           rel={link.startsWith("mailto") ? undefined : "noreferrer"}
           aria-label={alt}
-          className={`group w-11 h-11 rounded-2xl border flex items-center justify-center backdrop-blur-xl transition duration-300 ${isDark
+          className={`design-action group w-11 h-11 rounded-2xl border flex items-center justify-center backdrop-blur-xl transition duration-300 ${isDark
             ? "border-[#2b2b2b] bg-[#161616]/80 hover:bg-[#1f1f1f]"
             : "border-[#d8d8d8] bg-[#f3f3f3]/80 hover:bg-white"
           }`}

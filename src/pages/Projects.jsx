@@ -3,7 +3,7 @@ import { useTheme } from "../context/ThemeContext"
 import { ProjectsData } from "../constants/projects"
 
 function Projects() {
-  const { darkMode } = useTheme()
+  const { isDark: darkMode } = useTheme()
 
   return (
     <Layout>
@@ -24,12 +24,12 @@ function Projects() {
           </div>
 
           {/* Grid layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="project-grid grid grid-cols-1 md:grid-cols-2 gap-6">
             {ProjectsData.map((project) => {
               return (
                 <div
                   key={project.title}
-                  className={`group border rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
+                  className={`project-tile design-surface group border rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
                     darkMode
                       ? "border-[#262626] bg-[#151515]/70"
                       : "border-[#d8d8d8] bg-[#efefef]/70"
@@ -40,7 +40,7 @@ function Projects() {
                     href={project.live || project.repo || "#"}
                     target="_blank"
                     rel="noreferrer"
-                    className="block aspect-video relative overflow-hidden cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                    className="project-preview block aspect-video relative overflow-hidden cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                   >
                     {project.image && (
                       <img

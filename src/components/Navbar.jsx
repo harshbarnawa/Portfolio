@@ -15,7 +15,7 @@ function Navbar() {
         aria-label="Choose portfolio theme"
         value={theme}
         onChange={(event) => setTheme(event.target.value)}
-        className="theme-select max-w-[160px] rounded-full border px-3 py-2 text-[10px] tracking-wide outline-none transition"
+        className="theme-select design-action max-w-[160px] rounded-full border px-3 py-2 text-[10px] tracking-wide outline-none transition"
       >
         {themes.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
       </select>
@@ -28,7 +28,7 @@ function Navbar() {
       onClick={() => setMode(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="mode-toggle inline-flex items-center gap-2 rounded-full border px-3 py-2 text-[10px] uppercase tracking-[1.2px] transition"
+      className="mode-toggle design-action inline-flex items-center gap-2 rounded-full border px-3 py-2 text-[10px] uppercase tracking-[1.2px] transition"
     >
       <span aria-hidden="true">{isDark ? "☼" : "◐"}</span>
       <span>{isDark ? "Light" : "Dark"}</span>
@@ -68,7 +68,7 @@ function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className={`md:hidden border-t px-5 py-5 flex flex-col gap-5 text-[11px] uppercase tracking-[2px] relative z-20 ${isDark ? "border-white/15 bg-[#10151a]/95 text-[#bbb]" : "border-black/10 bg-white/90 text-[#777]"}`}>
+        <div className={`design-surface md:hidden border-t px-5 py-5 flex flex-col gap-5 text-[11px] uppercase tracking-[2px] relative z-20 ${isDark ? "border-white/15 bg-[#10151a]/95 text-[#bbb]" : "border-black/10 bg-white/90 text-[#777]"}`}>
           <div className="flex flex-wrap items-center gap-4 self-start">{themePicker}</div>
           {NavLinks.map(({ to, label }) => (
             <Link key={to} to={to} onClick={() => setMenuOpen(false)} className={location.pathname === to ? (isDark ? "text-white" : "text-black") : "opacity-70"}>
