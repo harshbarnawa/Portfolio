@@ -37,20 +37,21 @@ function Projects() {
                 >
                   {/* Clickable thumbnail */}
                   <a
-                    href={project.live}
+                    href={project.live || project.repo || "#"}
                     target="_blank"
                     rel="noreferrer"
-                    className="block aspect-video relative overflow-hidden cursor-pointer"
+                    className="block aspect-video relative overflow-hidden cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                   >
                     {project.image && (
                       <img
                         src={project.image}
                         alt={`${project.title} preview`}
                         loading="lazy"
+                        decoding="async"
                         className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                       />
                     )}
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-all duration-300">
                       <span className="text-white text-[11px] uppercase tracking-[2px] border border-white/40 px-4 py-2 rounded-full backdrop-blur-sm">
                         View Project →
                       </span>
@@ -73,6 +74,7 @@ function Projects() {
                             href={project.live}
                             target="_blank"
                             rel="noreferrer"
+                            aria-label={`View ${project.title} live site`}
                             className={`text-[11px] transition ${
                               darkMode
                                 ? "text-[#7a7a7a] hover:text-white"
@@ -85,6 +87,7 @@ function Projects() {
                         {project.repo && (
                           <a
                             href={project.repo}
+                            aria-label={`View ${project.title} source code`}
                             target="_blank"
                             rel="noreferrer"
                             className={`text-[11px] transition ${
