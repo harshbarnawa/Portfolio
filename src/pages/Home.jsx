@@ -301,11 +301,11 @@ function Home() {
           </div>
 
           <p
-            className={`hero-intro font-serif italic text-[15px] md:text-[17px] leading-[2] tracking-[-0.01em] ${
+            className={`hero-intro font-serif italic !italic text-[15px] md:text-[17px] leading-[2] tracking-[-0.01em] ${
               darkMode ? "text-[#cfcfcf]" : "text-[#4a4a4a]"
             }`}
           >
-            I build full-stack applications and backend systems, with a focus on turning ideas into reliable products. Currently building Board N Byte, exploring applied AI, and sharpening my problem-solving skills.
+            I like building clean things and overthinking small details that probably don&apos;t matter that much. mostly building random projects, solving cpp problems and rebuilding things again because &quot;something still feels off&quot;
           </p>
 
           {/* Mini quick stats */}
